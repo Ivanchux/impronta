@@ -1,0 +1,386 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solicitar presupuesto — Impronta</title>
+  <meta name="description" content="Solicita presupuesto de impresión en Madrid. Te respondemos en menos de 24 horas, sin compromiso.">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <meta property="og:type" content="website">
+  <meta property="og:title" content="Solicitar presupuesto de impresión — Impronta">
+  <meta property="og:description" content="Solicita presupuesto de impresión en Madrid. Te respondemos en menos de 24 horas, sin compromiso.">
+  <meta property="og:url" content="https://impronta.es/presupuesto.html">
+  <meta property="og:image" content="https://impronta.es/og-image.jpg">
+  <meta property="og:locale" content="es_ES">
+  <link rel="stylesheet" href="estilos.css">
+  <script src="https://unpkg.com/lucide@0.429.0/dist/umd/lucide.js" defer></script>
+</head>
+<body>
+
+<!-- NAVEGACIÓN -->
+<nav id="nav">
+  <a class="nav-logo" href="index.html"><img src="logo-impronta.png" alt="Impronta" width="400" height="218" style="height:54px;width:auto;display:block"></a>
+  <ul class="nav-enlaces">
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="servicios.html">Servicios</a></li>
+    <li><a href="nosotros.html">Nosotros</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="tarjeta.html" class="nav-tarjeta">Tu tarjeta</a></li>
+    <li><a href="presupuesto.html" class="nav-llamada-accion activo">Presupuesto</a></li>
+  </ul>
+  <button class="btn-tema" id="btnTema" onclick="cambiarTema()">&#127769;</button>
+  <button class="nav-hamburgesa" onclick="abrirMenu()" id="btnMenu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="nav-menu-movil" id="menuMovil">
+  <a href="index.html">Inicio</a>
+  <a href="servicios.html">Servicios</a>
+  <a href="nosotros.html">Nosotros</a>
+  <a href="blog.html">Blog</a>
+  <a href="tarjeta.html">Tu tarjeta</a>
+  <a href="presupuesto.html" style="color:var(--oro)">Solicitar presupuesto →</a>
+</div>
+
+
+<main>
+<!-- CABECERA INTERIOR -->
+<div class="relleno-nav"></div>
+<header class="cabecera-pagina">
+    <div class="cabecera-overlay"></div>
+  <div class="contenedor">
+    <span class="supratitulo">Sin compromiso · Respuesta en 24h</span>
+    <h1>Solicitar presupuesto</h1>
+    <p>Cuéntanos tu proyecto como quieras. No hace falta saber de impresión para rellenar esto.</p>
+  </div>
+</header>
+
+
+<!-- SECCIÓN PRESUPUESTO -->
+<section class="presupuesto-seccion">
+  <div class="contenedor">
+    <div class="presupuesto-interior">
+
+      <!-- COLUMNA IZQUIERDA: GARANTÍAS -->
+      <aside class="presupuesto-info">
+        <span class="supratitulo">¿Por qué Impronta?</span>
+        <h2>Presupuesto claro, sin letra pequeña</h2>
+        <div class="miga-separador-oro"></div>
+        <p>Revisamos tu solicitud y te enviamos un presupuesto detallado con precio final, plazo de entrega y opciones de acabado. Sin sorpresas.</p>
+
+        <ul class="garantia-lista">
+          <li class="garantia-elemento">
+            <div class="garantia-icono"><i data-lucide="clock" size="18"></i></div>
+            <div class="garantia-texto">
+              <strong>Respuesta en menos de 24h</strong>
+              <span>En días laborables. Habitualmente antes.</span>
+            </div>
+          </li>
+          <li class="garantia-elemento">
+            <div class="garantia-icono"><i data-lucide="shield-check" size="18"></i></div>
+            <div class="garantia-texto">
+              <strong>Sin compromiso de compra</strong>
+              <span>El presupuesto es totalmente gratuito.</span>
+            </div>
+          </li>
+          <li class="garantia-elemento">
+            <div class="garantia-icono"><i data-lucide="file-check" size="18"></i></div>
+            <div class="garantia-texto">
+              <strong>Revisión de archivos incluida</strong>
+              <span>Comprobamos tu diseño antes de imprimir.</span>
+            </div>
+          </li>
+          <li class="garantia-elemento">
+            <div class="garantia-icono"><i data-lucide="message-circle" size="18"></i></div>
+            <div class="garantia-texto">
+              <strong>Asesoramiento sin tecnicismos</strong>
+              <span>Si no sabes qué pedir, te ayudamos a definirlo.</span>
+            </div>
+          </li>
+        </ul>
+
+        <div class="presupuesto-alternativa">
+          <p>¿Prefieres hablarlo directamente? Escríbenos por WhatsApp y te atendemos ahora.</p>
+          <a href="https://wa.me/34910000000" target="_blank" rel="noopener">
+            <i data-lucide="message-circle" size="14"></i> Abrir WhatsApp
+          </a>
+        </div>
+      </aside>
+
+      <!-- COLUMNA DERECHA: FORMULARIO -->
+      <div>
+        <!-- PASOS -->
+        <div class="pasos-progreso" id="pasos">
+          <div class="paso activo" id="paso1">
+            <div class="paso-numero">1</div>
+            <span class="paso-etiqueta">Servicio</span>
+          </div>
+          <div class="paso-linea"></div>
+          <div class="paso" id="paso2">
+            <div class="paso-numero">2</div>
+            <span class="paso-etiqueta">Detalles</span>
+          </div>
+          <div class="paso-linea"></div>
+          <div class="paso" id="paso3">
+            <div class="paso-numero">3</div>
+            <span class="paso-etiqueta">Contacto</span>
+          </div>
+        </div>
+
+        <form id="formPresupuesto" novalidate>
+          <div class="caja-formulario">
+
+            <!-- PASO 1: SERVICIO -->
+            <div class="formulario-seccion visible" id="seccion1">
+              <p class="seccion-titulo">¿Qué tipo de impresión necesitas?</p>
+              <p class="seccion-subtitulo">Puedes cambiar esto más adelante si no estás seguro.</p>
+
+              <div class="selector-servicios">
+                <div class="servicio-opcion">
+                  <input type="radio" name="servicio" id="srv-digital" value="Impresión Digital">
+                  <label for="srv-digital">
+                    <span class="opcion-icono"><i data-lucide="credit-card" size="22"></i></span>
+                    Impresión Digital
+                  </label>
+                </div>
+                <div class="servicio-opcion">
+                  <input type="radio" name="servicio" id="srv-gran-formato" value="Gran Formato">
+                  <label for="srv-gran-formato">
+                    <span class="opcion-icono"><i data-lucide="image" size="22"></i></span>
+                    Gran Formato
+                  </label>
+                </div>
+                <div class="servicio-opcion">
+                  <input type="radio" name="servicio" id="srv-packaging" value="Packaging">
+                  <label for="srv-packaging">
+                    <span class="opcion-icono"><i data-lucide="package" size="22"></i></span>
+                    Packaging
+                  </label>
+                </div>
+                <div class="servicio-opcion">
+                  <input type="radio" name="servicio" id="srv-carteleria" value="Cartelería">
+                  <label for="srv-carteleria">
+                    <span class="opcion-icono"><i data-lucide="flag" size="22"></i></span>
+                    Cartelería
+                  </label>
+                </div>
+                <div class="servicio-opcion">
+                  <input type="radio" name="servicio" id="srv-regalo" value="Regalo Promocional">
+                  <label for="srv-regalo">
+                    <span class="opcion-icono"><i data-lucide="gift" size="22"></i></span>
+                    Regalo Promo
+                  </label>
+                </div>
+                <div class="servicio-opcion">
+                  <input type="radio" name="servicio" id="srv-papeleria" value="Papelería">
+                  <label for="srv-papeleria">
+                    <span class="opcion-icono"><i data-lucide="mail" size="22"></i></span>
+                    Papelería
+                  </label>
+                </div>
+              </div>
+              <p id="error-servicio" class="campo-error" style="display:none">Por favor, selecciona un tipo de servicio.</p>
+
+              <div class="grupo-campo">
+                <label class="etiqueta-campo" for="producto">¿Qué producto concreto necesitas?</label>
+                <input type="text" id="producto" name="producto" class="campo-texto"
+                  placeholder="Ej: tarjetas de visita, lona para fachada, cajas de cartón…">
+              </div>
+
+              <div class="nav-pasos">
+                <div></div>
+                <button type="button" class="btn btn-gold" onclick="irPaso(2)">
+                  Siguiente <i data-lucide="arrow-right" size="15"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- PASO 2: DETALLES -->
+            <div class="formulario-seccion" id="seccion2">
+              <p class="seccion-titulo">Cuéntanos los detalles</p>
+              <p class="seccion-subtitulo">Cuanto más nos cuentes, más preciso será el presupuesto.</p>
+
+              <div class="fila-campos">
+                <div class="grupo-campo">
+                  <label class="etiqueta-campo" for="cantidad">Cantidad aproximada</label>
+                  <input type="number" id="cantidad" name="cantidad" class="campo-texto"
+                    placeholder="Ej: 500" min="1">
+                </div>
+                <div class="grupo-campo">
+                  <label class="etiqueta-campo" for="plazo">Plazo deseado</label>
+                  <select id="plazo" name="plazo" class="campo-selector">
+                    <option value="">Selecciona…</option>
+                    <option value="urgente">Urgente (24–48h)</option>
+                    <option value="normal">Normal (3–5 días)</option>
+                    <option value="sin-prisa">Sin prisa (más de 1 semana)</option>
+                    <option value="no-se">No lo sé todavía</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="grupo-campo">
+                <label class="etiqueta-campo" for="descripcion">Descripción del proyecto <span style="color:var(--oro)">*</span></label>
+                <textarea id="descripcion" name="descripcion" class="campo-area"
+                  placeholder="Cuéntanos de qué va el proyecto, para qué se va a usar, si tienes diseño propio o necesitas ayuda, qué formato o tamaño tienes en mente…" required></textarea>
+                <p id="error-descripcion" class="campo-error">Este campo es obligatorio.</p>
+              </div>
+
+              <div class="grupo-campo">
+                <label class="etiqueta-campo" for="presupuesto-estimado">Presupuesto orientativo (opcional)</label>
+                <select id="presupuesto-estimado" name="presupuesto_estimado" class="campo-selector">
+                  <option value="">No lo sé todavía</option>
+                  <option value="menos-200">Menos de 200 €</option>
+                  <option value="200-500">200 – 500 €</option>
+                  <option value="500-1500">500 – 1.500 €</option>
+                  <option value="mas-1500">Más de 1.500 €</option>
+                </select>
+              </div>
+
+              <div class="nav-pasos">
+                <button type="button" class="btn btn-outline" onclick="irPaso(1)">
+                  <i data-lucide="arrow-left" size="15"></i> Atrás
+                </button>
+                <button type="button" class="btn btn-gold" onclick="irPaso(3)">
+                  Siguiente <i data-lucide="arrow-right" size="15"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- PASO 3: CONTACTO -->
+            <div class="formulario-seccion" id="seccion3">
+              <p class="seccion-titulo">¿Cómo te contactamos?</p>
+              <p class="seccion-subtitulo">Solo para enviarte el presupuesto. Sin spam, prometido.</p>
+
+              <div class="fila-campos">
+                <div class="grupo-campo">
+                  <label class="etiqueta-campo" for="nombre">Nombre <span style="color:var(--oro)">*</span></label>
+                  <input type="text" id="nombre" name="nombre" class="campo-texto"
+                    placeholder="Tu nombre o el de tu empresa" required>
+                  <p id="error-nombre" class="campo-error">Indícanos tu nombre.</p>
+                </div>
+                <div class="grupo-campo">
+                  <label class="etiqueta-campo" for="email">Email <span style="color:var(--oro)">*</span></label>
+                  <input type="email" id="email" name="email" class="campo-texto"
+                    placeholder="hola@tuempresa.com" required>
+                  <p id="error-email" class="campo-error">Introduce un email válido.</p>
+                </div>
+              </div>
+
+              <div class="grupo-campo">
+                <label class="etiqueta-campo" for="telefono">Teléfono (opcional)</label>
+                <input type="tel" id="telefono" name="telefono" class="campo-texto"
+                  placeholder="+34 600 000 000">
+              </div>
+
+              <div class="grupo-campo">
+                <label class="campo-casilla">
+                  <input type="checkbox" id="privacidad" name="privacidad" required>
+                  <span>He leído y acepto la <a href="Legal/privacidad.html">política de privacidad</a>. Los datos se usarán únicamente para gestionar tu solicitud.</span>
+                </label>
+                <p id="error-privacidad" class="campo-error">Debes aceptar la política de privacidad.</p>
+              </div>
+
+              <div class="nav-pasos">
+                <button type="button" class="btn btn-outline" onclick="irPaso(2)">
+                  <i data-lucide="arrow-left" size="15"></i> Atrás
+                </button>
+                <button type="submit" class="btn btn-gold boton-enviar" style="width:auto;margin-top:0">
+                  <i data-lucide="send" size="15"></i> Enviar solicitud
+                </button>
+              </div>
+            </div>
+
+          </div><!-- /caja-formulario -->
+
+          <!-- CONFIRMACIÓN -->
+          <div class="confirmacion" id="confirmacion">
+            <div class="confirmacion-icono">
+              <i data-lucide="check" size="32"></i>
+            </div>
+            <span class="supratitulo">¡Solicitud recibida!</span>
+            <h3>Te responderemos en menos de 24 horas</h3>
+            <p>Hemos recibido tu solicitud de presupuesto. Revisaremos los detalles y te enviaremos una propuesta personalizada al email que nos has indicado.</p>
+            <a href="index.html" class="btn btn-gold">
+              <i data-lucide="home" size="15"></i> Volver al inicio
+            </a>
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+</main>
+
+<footer>
+  <div class="contenedor">
+    <div class="pie-cuadricula">
+      <div class="pie-marca">
+        <a href="index.html" style="display:block;margin-bottom:16px"><img src="logo-impronta.png" alt="Impronta" style="height:110px;width:auto;display:block"></a>
+        <p>Servicios gráficos e imprenta en Madrid. Sin tirada mínima, sin tecnicismos, sin sorpresas.</p>
+        <div class="pie-redes">
+          <div class="pie-red" title="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></div>
+          <div class="pie-red" title="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="2"/><line x1="8" y1="10" x2="8" y2="18"/><line x1="8" y1="7" x2="8" y2="7.5" stroke-width="2.5"/><path d="M12 10v8M12 14c0-2 1.5-4 4-4v8"/></svg></div>
+          <div class="pie-red" title="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></div>
+        </div>
+      </div>
+      <div class="pie-columna">
+        <h5>Servicios</h5>
+        <ul>
+          <li><a href="servicios.html">Impresión Digital</a></li>
+          <li><a href="servicios.html">Gran Formato</a></li>
+          <li><a href="servicios.html">Packaging</a></li>
+          <li><a href="servicios.html">Cartelería</a></li>
+          <li><a href="servicios.html">Regalo Promocional</a></li>
+        </ul>
+      </div>
+      <div class="pie-columna">
+        <h5>Empresa</h5>
+        <ul>
+          <li><a href="nosotros.html">Sobre nosotros</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="presupuesto.html">Solicitar presupuesto</a></li>
+        </ul>
+      </div>
+      <div class="pie-columna">
+        <h5>Contacto</h5>
+        <ul>
+          <li><a>hola@impronta.es</a></li>
+          <li><a>+34 910 000 000</a></li>
+          <li><a>Lun–Vie 9h–18h</a></li>
+          <li><a>Calle Gráfica 24, 28045 Madrid</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pie-inferior">
+      <p>© 2025 Impronta Servicios Gráficos SL. Todos los derechos reservados.</p>
+      <div class="pie-legal">
+        <a href="Legal/aviso-legal.html">Aviso legal</a>
+        <a href="Legal/privacidad.html">Privacidad</a>
+        <a href="Legal/cookies.html">Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- BANNER COOKIES -->
+<div class="aviso-cookies" id="bannerCookies">
+  <div class="aviso-cookies-texto">
+    <p>Usamos cookies propias y de terceros para mejorar tu experiencia. <a href="Legal/cookies.html">Más información</a></p>
+  </div>
+  <div class="aviso-cookies-botones">
+    <button class="boton-cookies boton-aceptar" onclick="aceptarCookies()">Aceptar</button>
+  </div>
+</div>
+
+<script src="scripts.js"></script>
+</body>
+</html>
+

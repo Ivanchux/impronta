@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Impronta — Servicios Gráficos Madrid</title>
+  <meta name="description" content="Imprenta y servicios gráficos en Madrid. Sin tecnicismos, sin sorpresas.">
+
+  <!-- open graph: controla cómo se ve el enlace al compartir en WhatsApp o LinkedIn -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Impronta — Servicios Gráficos Madrid">
+  <meta property="og:description" content="Imprenta y servicios gráficos en Madrid. Sin tirada mínima, sin tecnicismos, sin sorpresas.">
+  <meta property="og:url" content="https://impronta.es/">
+  <meta property="og:image" content="https://impronta.es/og-image.jpg">
+  <meta property="og:locale" content="es_ES">
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+  <script src="https://unpkg.com/lucide@0.429.0/dist/umd/lucide.js" defer></script>
+</head>
+<body>
+
+<!-- menú de navegación -->
+<nav id="nav">
+  <a class="nav-logo" href="index.html">
+    <img src="logo-impronta.png" alt="Impronta" width="400" height="218" style="height:54px;width:auto;display:block">
+  </a>
+  <ul class="nav-enlaces">
+    <li><a href="index.html" class="activo">Inicio</a></li>
+    <li><a href="servicios.html">Servicios</a></li>
+    <li><a href="nosotros.html">Nosotros</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="tarjeta.html" class="nav-tarjeta">Tu tarjeta</a></li>
+    <li><a href="presupuesto.html" class="nav-llamada-accion">Presupuesto</a></li>
+  </ul>
+  <button class="btn-tema" id="btnTema" onclick="cambiarTema()">&#127769;</button>
+  <!-- el botón hamburguesa solo aparece en móvil (lo oculta el CSS en escritorio) -->
+  <button class="nav-hamburgesa" onclick="abrirMenu()" id="btnMenu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- menú desplegable para móvil -->
+<div class="nav-menu-movil" id="menuMovil">
+  <a href="index.html">Inicio</a>
+  <a href="servicios.html">Servicios</a>
+  <a href="nosotros.html">Nosotros</a>
+  <a href="blog.html">Blog</a>
+  <a href="presupuesto.html" style="color:var(--oro)">Solicitar presupuesto →</a>
+</div>
+
+
+<main>
+
+<!-- sección hero / portada -->
+<section class="hero" style="padding:0">
+
+  <!-- preload="none" para que el vídeo no bloquee la carga de la página (mejora el LCP) -->
+  <!-- el atributo poster muestra la imagen mientras el vídeo carga -->
+  <video poster="Imagenes/foto-hero.jpg" class="hero-video"
+         autoplay loop muted playsinline preload="none">
+    <source src="Videos/video-portada.mp4" type="video/mp4">
+  </video>
+
+  <div class="hero-contenido">
+    <div class="hero-etiqueta">Madrid · Est. 2025</div>
+    <h1>Imprimimos<br>lo que <em>imaginas</em></h1>
+    <p class="hero-subtitulo">Sin tecnicismos, sin sorpresas. Servicios gráficos para marcas que quieren destacar.</p>
+    <div class="hero-botones">
+      <a href="contacto.html" class="btn btn-gold">
+        <i data-lucide="send" size="15"></i> Cuéntanos tu proyecto
+      </a>
+      <a href="servicios.html" class="btn btn-outline-light">Ver servicios</a>
+    </div>
+    <div class="hero-insignia-inline">Entrega en 48h</div>
+  </div>
+
+  <div class="hero-desplazar">Descubre más</div>
+</section>
+
+
+<!-- franja con los tres puntos fuertes de la empresa -->
+<div class="franja-valor">
+  <div class="franja-valor-inner">
+
+    <div class="valor-elemento">
+      <div class="valor-icono"><i data-lucide="zap" size="28"></i></div>
+      <div class="valor-texto">
+        <strong>Entrega en 48h</strong>
+        <span>Plazos reales que cumplimos</span>
+      </div>
+    </div>
+
+    <div class="valor-elemento">
+      <div class="valor-icono"><i data-lucide="message-circle" size="28"></i></div>
+      <div class="valor-texto">
+        <strong>Te asesoramos sin jerga</strong>
+        <span>Explícanos tu proyecto como quieras</span>
+      </div>
+    </div>
+
+    <div class="valor-elemento">
+      <div class="valor-icono"><i data-lucide="layers" size="28"></i></div>
+      <div class="valor-texto">
+        <strong>Sin tirada mínima</strong>
+        <span>Impresión digital desde 1 unidad</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- tarjetas de servicios - solo muestro 6, el resto está en servicios.html -->
+<section class="servicios-inicio">
+  <div class="contenedor">
+    <div class="servicios-cabecera">
+      <div>
+        <span class="supratitulo">Lo que hacemos</span>
+        <h2>Nuestros servicios</h2>
+      </div>
+      <a href="servicios.html" class="btn btn-outline">Ver todos →</a>
+    </div>
+
+    <div class="servicios-cuadricula">
+      <a href="servicios.html" class="servicio-tarjeta">
+        <div class="servicio-numero">01</div>
+        <div class="servicio-icono"><i data-lucide="credit-card" size="28"></i></div>
+        <h3>Impresión Digital</h3>
+        <p>Tarjetas, flyers, dípticos y trípticos. Sin tirada mínima, con acabados que marcan la diferencia.</p>
+        <div class="servicio-enlace"><i data-lucide="arrow-right" size="14"></i> Saber más</div>
+      </a>
+
+      <a href="servicios.html" class="servicio-tarjeta">
+        <div class="servicio-numero">02</div>
+        <div class="servicio-icono"><i data-lucide="image" size="28"></i></div>
+        <h3>Gran Formato</h3>
+        <p>Lonas, vinilos y carteles hasta 5m de ancho. Impresión UV para exteriores e interiores.</p>
+        <div class="servicio-enlace"><i data-lucide="arrow-right" size="14"></i> Saber más</div>
+      </a>
+
+      <a href="servicios.html" class="servicio-tarjeta">
+        <div class="servicio-numero">03</div>
+        <div class="servicio-icono"><i data-lucide="package" size="28"></i></div>
+        <h3>Packaging</h3>
+        <p>Cajas, bolsas y envases con tu identidad de marca. Te asesoramos en el formato y el material.</p>
+        <div class="servicio-enlace"><i data-lucide="arrow-right" size="14"></i> Saber más</div>
+      </a>
+
+      <a href="servicios.html" class="servicio-tarjeta">
+        <div class="servicio-numero">04</div>
+        <div class="servicio-icono"><i data-lucide="flag" size="28"></i></div>
+        <h3>Cartelería</h3>
+        <p>Señalética, pósters y punto de venta. Diseño y producción en un solo paso.</p>
+        <div class="servicio-enlace"><i data-lucide="arrow-right" size="14"></i> Saber más</div>
+      </a>
+
+      <a href="servicios.html" class="servicio-tarjeta">
+        <div class="servicio-numero">05</div>
+        <div class="servicio-icono"><i data-lucide="gift" size="28"></i></div>
+        <h3>Regalo Promocional</h3>
+        <p>Bolígrafos, tazas, bolsas y más con el logo de tu empresa. Perfecto para eventos y campañas.</p>
+        <div class="servicio-enlace"><i data-lucide="arrow-right" size="14"></i> Saber más</div>
+      </a>
+
+      <a href="servicios.html" class="servicio-tarjeta">
+        <div class="servicio-numero">06</div>
+        <div class="servicio-icono"><i data-lucide="mail" size="28"></i></div>
+        <h3>Sobres y Papelería</h3>
+        <p>Sobres personalizados, membretes, tarjetas de felicitación y toda la papelería corporativa.</p>
+        <div class="servicio-enlace"><i data-lucide="arrow-right" size="14"></i> Saber más</div>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- banda azul - sección sobre la empresa -->
+<div class="nosotros-banda">
+  <div class="contenedor">
+    <div class="nosotros-interior">
+
+      <div class="nosotros-contenido">
+        <span class="supratitulo">Quiénes somos</span>
+        <h2>Una imprenta diferente, hecha para tu marca</h2>
+        <div class="miga-separador-oro"></div>
+        <p>Impronta nació con una convicción: que conseguir materiales gráficos de calidad no debería requerir conocer la jerga del sector. Trabajamos con empresas, autónomos y emprendedores que quieren que su marca esté a la altura de sus ideas.</p>
+        <p>Revisamos cada archivo antes de imprimir, te avisamos si hay algo que mejorar y te acompañamos en todo el proceso.</p>
+
+        <div class="nosotros-estadisticas">
+          <div class="estadistica-elemento">
+            <strong>+200</strong>
+            <span>Clientes satisfechos</span>
+          </div>
+          <div class="estadistica-elemento">
+            <strong>48h</strong>
+            <span>Entrega estándar</span>
+          </div>
+          <div class="estadistica-elemento">
+            <strong>5</strong>
+            <span>Líneas de servicio</span>
+          </div>
+          <div class="estadistica-elemento">
+            <strong>0</strong>
+            <span>Sorpresas en la factura</span>
+          </div>
+        </div>
+
+        <a href="nosotros.html" class="btn btn-outline-light" style="margin-top:36px">Conoce nuestro equipo</a>
+      </div>
+
+      <!-- loading lazy para que la imagen no bloquee la carga inicial -->
+      <div class="nosotros-foto">
+        <img src="Imagenes/foto-nosotros.png" alt="Equipo Impronta trabajando" loading="lazy">
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- testimonios de clientes -->
+<section class="testimonios">
+  <div class="contenedor">
+    <div style="text-align:center">
+      <span class="supratitulo">Lo que dicen</span>
+      <h2>Clientes que confían en Impronta</h2>
+    </div>
+
+    <div class="testimonios-cuadricula">
+
+      <div class="testimonio-tarjeta">
+        <div class="testimonio-estrellas">
+          <i data-lucide="star" size="16" fill="currentColor"></i>
+          <i data-lucide="star" size="16" fill="currentColor"></i>
+          <i data-lucide="star" size="16" fill="currentColor"></i>
+          <i data-lucide="star" size="16" fill="currentColor"></i>
+          <i data-lucide="star" size="16" fill="currentColor"></i>
+        </div>
+        <blockquote>"Por fin una imprenta que me explicó todo sin hacerme sentir que no sabía nada. Los materiales quedaron perfectos."</blockquote>
+        <div class="testimonio-autor">
+          <strong>Lucía Fernández</strong>
+          <span>Diseñadora de joyería artesanal</span>
+        </div>
+      </div>
+
+      <div class="testimonio-tarjeta">
+        <div class="testimonio-estrellas">
+          <i data-lucide="star" size="16" fill="currentColor"></i>
+          <i data-lucide="star" size="16" fill="currentColor"></i>
+          <i data-lucide="star" size="16" fill="currentColor"></i>
+          <i data-lucide="star" size="16" fill="currentColor"></i>
+          <i data-lucide="star" size="16" fill="currentColor"></i>
+        </div>
+        <blockquote>"Llevaba meses buscando un proveedor de impresión fiable para nuestras campañas. Impronta cumple plazos y la calidad es constante."</blockquote>
+        <div class="testimonio-autor">
+          <strong>Marcos Delgado</strong>
+          <span>Responsable de Marketing, DistribMadrid</span>
+        </div>
+      </div>
+
+      <div class="testimonio-tarjeta">
+        <div class="testimonio-estrellas">
+          <i data-lucide="star" size="16" fill="currentColor"></i>
+          <i data-lucide="star" size="16" fill="currentColor"></i>
+          <i data-lucide="star" size="16" fill="currentColor"></i>
+          <i data-lucide="star" size="16" fill="currentColor"></i>
+          <i data-lucide="star" size="16" fill="currentColor"></i>
+        </div>
+        <blockquote>"Pedí packaging personalizado sin saber muy bien qué quería. Me ayudaron a definirlo y el resultado superó lo que esperaba."</blockquote>
+        <div class="testimonio-autor">
+          <strong>Ana Torres</strong>
+          <span>Fundadora, Miel de Autor</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- llamada a la acción final -->
+<div class="llamada-inicio">
+  <div class="contenedor">
+    <span class="supratitulo">Trabajemos juntos</span>
+    <h2>¿Tienes un proyecto en mente?</h2>
+    <p>Cuéntanoslo como quieras — sin formularios complicados ni terminología técnica. Te preparamos un presupuesto en menos de 24 horas.</p>
+    <div class="botones-fila">
+      <a href="contacto.html" class="btn btn-gold">
+        <i data-lucide="send" size="15"></i> Cuéntanos tu proyecto
+      </a>
+      <a href="servicios.html" class="btn btn-outline-light">Ver todos los servicios</a>
+    </div>
+  </div>
+</div>
+
+</main>
+
+
+<footer>
+  <div class="contenedor">
+    <div class="pie-cuadricula">
+
+      <div class="pie-marca">
+        <a href="index.html" style="display:block;margin-bottom:16px">
+          <img src="logo-impronta.png" alt="Impronta" style="height:110px;width:auto;display:block">
+        </a>
+        <p>Servicios gráficos e imprenta en Madrid. Sin tirada mínima, sin tecnicismos, sin sorpresas.</p>
+        <!-- iconos de redes sociales en SVG inline porque Lucide no incluye estos exactos -->
+        <div class="pie-redes">
+          <div class="pie-red">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <rect x="2" y="2" width="20" height="20" rx="5"/>
+              <circle cx="12" cy="12" r="5"/>
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+            </svg>
+          </div>
+          <div class="pie-red">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <rect x="2" y="2" width="20" height="20" rx="2"/>
+              <line x1="8" y1="10" x2="8" y2="18"/>
+              <line x1="8" y1="7" x2="8" y2="7.5" stroke-width="2.5"/>
+              <path d="M12 10v8M12 14c0-2 1.5-4 4-4v8"/>
+            </svg>
+          </div>
+          <div class="pie-red">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="pie-columna">
+        <h5>Servicios</h5>
+        <ul>
+          <li><a href="servicios.html">Impresión Digital</a></li>
+          <li><a href="servicios.html">Gran Formato</a></li>
+          <li><a href="servicios.html">Packaging</a></li>
+          <li><a href="servicios.html">Cartelería</a></li>
+          <li><a href="servicios.html">Regalo Promocional</a></li>
+        </ul>
+      </div>
+
+      <div class="pie-columna">
+        <h5>Empresa</h5>
+        <ul>
+          <li><a href="nosotros.html">Sobre nosotros</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="presupuesto.html">Solicitar presupuesto</a></li>
+        </ul>
+      </div>
+
+      <div class="pie-columna">
+        <h5>Contacto</h5>
+        <ul>
+          <li><a>hola@impronta.es</a></li>
+          <li><a>+34 910 000 000</a></li>
+          <li><a>Lun–Vie 9h–18h</a></li>
+          <li><a>Calle Gráfica 24, 28045 Madrid</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="pie-inferior">
+      <p>© 2025 Impronta Servicios Gráficos SL. Todos los derechos reservados.</p>
+      <div class="pie-legal">
+        <a href="Legal/aviso-legal.html">Aviso legal</a>
+        <a href="Legal/privacidad.html">Privacidad</a>
+        <a href="Legal/cookies.html">Cookies</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+
+<!-- aviso de cookies - se oculta automáticamente si ya se aceptó antes -->
+<div class="aviso-cookies" id="bannerCookies">
+  <div class="aviso-cookies-texto">
+    <p>Usamos cookies propias y de terceros para mejorar tu experiencia. <a href="Legal/cookies.html">Más información</a></p>
+  </div>
+  <div class="aviso-cookies-botones">
+    <button class="boton-cookies boton-aceptar" onclick="aceptarCookies()">Aceptar</button>
+  </div>
+</div>
+
+<script src="scripts.js"></script>
+</body>
+</html>

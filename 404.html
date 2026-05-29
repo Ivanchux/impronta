@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página no encontrada — Impronta</title>
+  <meta name="robots" content="noindex">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+  <script src="https://unpkg.com/lucide@0.429.0/dist/umd/lucide.js" defer></script>
+</head>
+<body>
+
+<!-- NAVEGACIÓN -->
+<nav id="nav">
+  <a class="nav-logo" href="index.html"><img src="logo-impronta.png" alt="Impronta" width="400" height="218" style="height:54px;width:auto;display:block"></a>
+  <ul class="nav-enlaces">
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="servicios.html">Servicios</a></li>
+    <li><a href="nosotros.html">Nosotros</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="presupuesto.html" class="nav-llamada-accion">Presupuesto</a></li>
+  </ul>
+  <button class="btn-tema" id="btnTema" onclick="cambiarTema()">&#127769;</button>
+  <button class="nav-hamburgesa" onclick="abrirMenu()" id="btnMenu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="nav-menu-movil" id="menuMovil">
+  <a href="index.html">Inicio</a>
+  <a href="servicios.html">Servicios</a>
+  <a href="nosotros.html">Nosotros</a>
+  <a href="blog.html">Blog</a>
+  <a href="presupuesto.html" style="color:var(--oro)">Solicitar presupuesto →</a>
+</div>
+
+
+<main>
+<!-- SECCIÓN 404 -->
+<div class="pagina-404">
+  <div class="contenido-404">
+    <div class="numero-404">404</div>
+    <h1 class="titulo-404">Esta página no existe</h1>
+    <p class="descripcion-404">
+      Parece que el enlace que seguiste ya no está aquí, o quizás nunca estuvo.<br>
+      Sin tecnicismos: nos hemos perdido. Pero te ayudamos a encontrar lo que buscas.
+    </p>
+    <div class="botones-404">
+      <a href="index.html" class="btn btn-gold">
+        <i data-lucide="home" size="15"></i> Volver al inicio
+      </a>
+      <a href="presupuesto.html" class="btn btn-outline-light">Pedir presupuesto</a>
+    </div>
+    <div class="separador-404"></div>
+    <div class="sugerencias-404">
+      <a href="servicios.html" class="sugerencia-enlace">
+        <i data-lucide="arrow-right" size="13"></i> Ver nuestros servicios
+      </a>
+      <a href="nosotros.html" class="sugerencia-enlace">
+        <i data-lucide="arrow-right" size="13"></i> Conocer el equipo
+      </a>
+      <a href="blog.html" class="sugerencia-enlace">
+        <i data-lucide="arrow-right" size="13"></i> Leer el blog
+      </a>
+      <a href="contacto.html" class="sugerencia-enlace">
+        <i data-lucide="arrow-right" size="13"></i> Contactar con nosotros
+      </a>
+    </div>
+  </div>
+</div>
+
+<script src="scripts.js"></script>
+</body>
+</html>

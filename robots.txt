@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Disallow: /Legal/
+
+Sitemap: https://ivanchux.github.io/impronta/sitemap.xml

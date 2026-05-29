@@ -1,0 +1,204 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — Impronta</title>
+  <meta name="description" content="Consejos, guías y recursos sobre impresión gráfica para empresas y autónomos. Blog de Impronta Servicios Gráficos Madrid.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Blog — Impronta">
+  <meta property="og:description" content="Consejos, guías y recursos sobre impresión gráfica para empresas y autónomos. Blog de Impronta Servicios Gráficos Madrid.">
+  <meta property="og:url" content="https://impronta.es/blog">
+  <meta property="og:image" content="https://impronta.es/og-image.jpg">
+  <meta property="og:locale" content="es_ES">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+  <script src="https://unpkg.com/lucide@0.429.0/dist/umd/lucide.js" defer></script>
+</head>
+<body>
+
+<!-- NAVEGACIÓN -->
+<nav>
+  <a class="nav-logo" href="index.html"><img src="logo-impronta.png" alt="Impronta" width="400" height="218" style="height:54px;width:auto;display:block"></a>
+  <ul class="nav-enlaces">
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="servicios.html">Servicios</a></li>
+    <li><a href="nosotros.html">Nosotros</a></li>
+    <li><a href="blog.html" class="activo">Blog</a></li>
+    <li><a href="tarjeta.html" class="nav-tarjeta">Tu tarjeta</a></li>
+    <li><a href="presupuesto.html" class="nav-llamada-accion">Presupuesto</a></li>
+  </ul>
+  <button class="btn-tema" id="btnTema" onclick="cambiarTema()">&#127769;</button>
+  <button class="nav-hamburgesa" onclick="abrirMenu()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="nav-menu-movil" id="menuMovil">
+  <a href="index.html">Inicio</a>
+  <a href="servicios.html">Servicios</a>
+  <a href="nosotros.html">Nosotros</a>
+  <a href="blog.html">Blog</a>
+  <a href="presupuesto.html" style="color:var(--oro)">Solicitar presupuesto →</a>
+</div>
+
+<main>
+
+
+<!-- HERO -->
+<div class="cabecera-pagina relleno-nav">
+  <div class="cabecera-overlay"></div>
+  <div class="contenedor">
+    <span class="supratitulo">Recursos</span>
+    <h1>Blog — Todo sobre impresión</h1>
+    <p>Guías, consejos y novedades para que tu marca siempre esté a la altura.</p>
+  </div>
+</div>
+
+
+<!-- BREADCRUMB -->
+<nav class="migadepan">
+  <div class="contenedor">
+    <ul class="miga-lista">
+      <li><a href="index.html">Inicio</a></li>
+      <li><span class="miga-separador">›</span></li>
+      <li><span class="miga-actual">Blog</span></li>
+    </ul>
+  </div>
+</nav>
+
+
+<!-- ARTÍCULOS -->
+<section class="seccion-fondo-crema" style="background:var(--crema)">
+  <div class="contenedor">
+    <div class="blog-cuadricula">
+
+      <a href="post-papel.html" class="blog-tarjeta">
+        <div class="blog-tarjeta-img" style="background-image:url('Imagenes/foto-post-papel.png');background-size:cover;background-position:center">
+          <div class="blog-tarjeta-img-overlay"></div>
+          <div class="blog-tarjeta-img-num">1</div>
+          <i class="blog-tarjeta-img-icono" data-lucide="layers" size="48"></i>
+        </div>
+        <div class="blog-tarjeta-cuerpo">
+          <span class="blog-etiqueta">Materiales</span>
+          <h3>¿Qué papel elegir para tus tarjetas de visita?</h3>
+          <p>Couché, kraft, reciclado, con o sin plastificado… Descubre cuál se adapta mejor a la imagen de tu marca.</p>
+          <div class="blog-metadatos">
+            <span>12 may 2025</span>
+            <span>4 min lectura</span>
+          </div>
+          <div class="blog-leer-mas">Leer más <i data-lucide="arrow-right" size="13"></i></div>
+        </div>
+      </a>
+
+      <a href="post-digital-offset.html" class="blog-tarjeta">
+        <div class="blog-tarjeta-img" style="background-image:url('Imagenes/foto-post-digital-offset.png');background-size:cover;background-position:center">
+          <div class="blog-tarjeta-img-overlay"></div>
+          <div class="blog-tarjeta-img-num">2</div>
+          <i class="blog-tarjeta-img-icono" data-lucide="printer" size="48"></i>
+        </div>
+        <div class="blog-tarjeta-cuerpo">
+          <span class="blog-etiqueta">Técnica</span>
+          <h3>Digital vs Offset: ¿cuál es la diferencia y cuál te conviene?</h3>
+          <p>Dos tecnologías, dos casos de uso. Te explicamos cuándo elegir una u otra sin complicarte la vida.</p>
+          <div class="blog-metadatos">
+            <span>5 may 2025</span>
+            <span>5 min lectura</span>
+          </div>
+          <div class="blog-leer-mas">Leer más <i data-lucide="arrow-right" size="13"></i></div>
+        </div>
+      </a>
+
+      <a href="post-autonomos.html" class="blog-tarjeta">
+        <div class="blog-tarjeta-img" style="background-image:url('Imagenes/foto-post-autonomos.png');background-size:cover;background-position:center">
+          <div class="blog-tarjeta-img-overlay"></div>
+          <div class="blog-tarjeta-img-num">3</div>
+          <i class="blog-tarjeta-img-icono" data-lucide="package" size="48"></i>
+        </div>
+        <div class="blog-tarjeta-cuerpo">
+          <span class="blog-etiqueta">Marca</span>
+          <h3>Materiales de marca para autónomos: por dónde empezar</h3>
+          <p>Tarjetas, packaging, etiquetas… ¿qué necesitas realmente cuando empiezas? Una guía práctica sin presupuesto mínimo.</p>
+          <div class="blog-metadatos">
+            <span>28 abr 2025</span>
+            <span>6 min lectura</span>
+          </div>
+          <div class="blog-leer-mas">Leer más <i data-lucide="arrow-right" size="13"></i></div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+
+
+</main>
+<footer>
+  <div class="contenedor">
+    <div class="pie-cuadricula">
+      <div class="pie-marca">
+        <a href="index.html" style="display:block;margin-bottom:16px"><img src="logo-impronta.png" alt="Impronta" style="height:110px;width:auto;display:block"></a>
+        <p>Servicios gráficos e imprenta en Madrid. Sin tirada mínima, sin tecnicismos, sin sorpresas.</p>
+        <div class="pie-redes">
+          <div class="pie-red"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></div>
+          <div class="pie-red"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="2"/><line x1="8" y1="10" x2="8" y2="18"/><line x1="8" y1="7" x2="8" y2="7.5" stroke-width="2.5"/><path d="M12 10v8M12 14c0-2 1.5-4 4-4v8"/></svg></div>
+          <div class="pie-red"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></div>
+        </div>
+      </div>
+      <div class="pie-columna">
+        <h5>Servicios</h5>
+        <ul>
+          <li><a href="servicios.html">Impresión Digital</a></li>
+          <li><a href="servicios.html">Gran Formato</a></li>
+          <li><a href="servicios.html">Packaging</a></li>
+          <li><a href="servicios.html">Cartelería</a></li>
+          <li><a href="servicios.html">Regalo Promocional</a></li>
+        </ul>
+      </div>
+      <div class="pie-columna">
+        <h5>Empresa</h5>
+        <ul>
+          <li><a href="nosotros.html">Sobre nosotros</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="presupuesto.html">Solicitar presupuesto</a></li>
+        </ul>
+      </div>
+      <div class="pie-columna">
+        <h5>Contacto</h5>
+        <ul>
+          <li><a>hola@impronta.es</a></li>
+          <li><a>+34 910 000 000</a></li>
+          <li><a>Lun–Vie 9h–18h</a></li>
+          <li><a>Calle Gráfica 24, 28045 Madrid</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pie-inferior">
+      <p>© 2025 Impronta Servicios Gráficos SL. Todos los derechos reservados.</p>
+      <div class="pie-legal">
+        <a href="Legal/aviso-legal.html">Aviso legal</a>
+        <a href="Legal/privacidad.html">Privacidad</a>
+        <a href="Legal/cookies.html">Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- BANNER COOKIES -->
+<div class="aviso-cookies" id="bannerCookies">
+  <div class="aviso-cookies-texto">
+    <p>Usamos cookies propias y de terceros para mejorar tu experiencia. <a href="Legal/cookies.html">Más información</a></p>
+  </div>
+  <div class="aviso-cookies-botones">
+    <button class="boton-cookies boton-aceptar" onclick="aceptarCookies()">Aceptar</button>
+  </div>
+</div>
+
+<script src="scripts.js"></script>
+</body>
+</html>

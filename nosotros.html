@@ -1,0 +1,194 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nosotros — Impronta</title>
+  <meta name="description" content="Conoce el equipo de Impronta: una imprenta diferente en Madrid, hecha para marcas que quieren destacar. Historia, valores y compromiso.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Nosotros — Impronta">
+  <meta property="og:description" content="Conoce el equipo de Impronta: una imprenta diferente en Madrid, hecha para marcas que quieren destacar. Historia, valores y compromiso.">
+  <meta property="og:url" content="https://impronta.es/nosotros">
+  <meta property="og:image" content="https://impronta.es/og-image.jpg">
+  <meta property="og:locale" content="es_ES">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+  <script src="https://unpkg.com/lucide@0.429.0/dist/umd/lucide.js" defer></script>
+</head>
+<body>
+
+<!-- NAVEGACIÓN -->
+<nav>
+  <a class="nav-logo" href="index.html"><img src="logo-impronta.png" alt="Impronta" width="400" height="218" style="height:54px;width:auto;display:block"></a>
+  <ul class="nav-enlaces">
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="servicios.html">Servicios</a></li>
+    <li><a href="nosotros.html" class="activo">Nosotros</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="tarjeta.html" class="nav-tarjeta">Tu tarjeta</a></li>
+    <li><a href="presupuesto.html" class="nav-llamada-accion">Presupuesto</a></li>
+  </ul>
+  <button class="btn-tema" id="btnTema" onclick="cambiarTema()">&#127769;</button>
+  <button class="nav-hamburgesa" onclick="abrirMenu()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="nav-menu-movil" id="menuMovil">
+  <a href="index.html">Inicio</a>
+  <a href="servicios.html">Servicios</a>
+  <a href="nosotros.html">Nosotros</a>
+  <a href="blog.html">Blog</a>
+  <a href="presupuesto.html" style="color:var(--oro)">Solicitar presupuesto →</a>
+</div>
+
+<main>
+
+
+<!-- HERO -->
+<div class="cabecera-pagina relleno-nav">
+  <div class="cabecera-overlay"></div>
+  <div class="contenedor">
+    <span class="supratitulo">Quiénes somos</span>
+    <h1>La imprenta que habla tu idioma</h1>
+    <p>Nació con un propósito claro: que conseguir materiales gráficos de calidad no requiera conocer la jerga del sector.</p>
+  </div>
+</div>
+
+
+<!-- HISTORIA -->
+<section>
+  <div class="contenedor">
+    <div class="historia-cuadricula">
+      <div>
+        <span class="supratitulo">Nuestra historia</span>
+        <h2>De la huella en papel a la huella en marca</h2>
+        <div class="miga-separador-oro"></div>
+        <p style="margin-bottom:16px">El nombre Impronta no es casual. En tipografía, una impronta es la huella que deja el tipo sobre el papel: única, precisa, inconfundible. Eso es lo que buscamos para cada proyecto que pasa por nuestras manos.</p>
+        <p style="margin-bottom:16px">Fundada en Madrid en 2025, Impronta surge de la convicción de que el sector de la impresión necesitaba una alternativa: una empresa que anteponga la experiencia del cliente al catálogo de productos.</p>
+        <p>Trabajamos con marcas de todos los tamaños, desde artesanas que acaban de lanzar su primera colección hasta departamentos de marketing con campañas nacionales.</p>
+      </div>
+      <div class="historia-visual">
+        <!-- Cambia "foto-historia.jpg" por una foto de las instalaciones o del equipo -->
+        <img src="Imagenes/foto-historia.png" alt="Impronta instalaciones" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- VALORES -->
+<section class="seccion-fondo-crema-oscura" style="background:var(--crema-oscura);padding:80px 0">
+  <div class="contenedor">
+    <div style="text-align:center;margin-bottom:56px">
+      <span class="supratitulo">Nuestros valores</span>
+      <h2>Lo que nos define</h2>
+    </div>
+    <div class="valores-cuadricula">
+      <div class="valores-tarjeta">
+        <div class="valores-tarjeta-icono"><i data-lucide="message-circle" size="32"></i></div>
+        <h3>Cercana</h3>
+        <div class="miga-separador-oro"></div>
+        <p style="margin-top:16px">Hablamos de tú, sin tecnicismos innecesarios. Si no sabes qué gramaje necesitas o qué diferencia hay entre satinado y mate, es normal — para eso estamos nosotros.</p>
+      </div>
+      <div class="valores-tarjeta destacada">
+        <div class="valores-tarjeta-icono"><i data-lucide="target" size="32"></i></div>
+        <h3>Precisa</h3>
+        <div class="miga-separador-oro"></div>
+        <p style="margin-top:16px">No hacemos promesas que no podemos cumplir. Cuando decimos "te respondemos en 24 horas" o "entrega en 48h", lo cumplimos y lo demostramos.</p>
+      </div>
+      <div class="valores-tarjeta">
+        <div class="valores-tarjeta-icono"><i data-lucide="eye" size="32"></i></div>
+        <h3>Cuidada</h3>
+        <div class="miga-separador-oro"></div>
+        <p style="margin-top:16px">La atención al detalle se nota tanto en la impresión como en la web, en los textos y en cómo tratamos a cada cliente. Cada pedido merece el mismo cuidado.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- CTA -->
+<section>
+  <div class="contenedor" style="text-align:center">
+    <span class="supratitulo">¿Empezamos?</span>
+    <h2>Tu proyecto, nuestro siguiente trabajo</h2>
+    <div class="miga-separador-oro centrado"></div>
+    <p style="max-width:480px;margin:0 auto 36px">Cuéntanos lo que necesitas. No hace falta que sepas el formato exacto ni el tipo de papel. Nosotros te guiamos.</p>
+    <a href="contacto.html" class="btn btn-gold">
+      <i data-lucide="send" size="15"></i> Cuéntanos tu proyecto
+    </a>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+
+
+</main>
+<footer>
+  <div class="contenedor">
+    <div class="pie-cuadricula">
+      <div class="pie-marca">
+        <a href="index.html" style="display:block;margin-bottom:16px"><img src="logo-impronta.png" alt="Impronta" style="height:110px;width:auto;display:block"></a>
+        <p>Servicios gráficos e imprenta en Madrid. Sin tirada mínima, sin tecnicismos, sin sorpresas.</p>
+        <div class="pie-redes">
+          <div class="pie-red"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></div>
+          <div class="pie-red"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="2"/><line x1="8" y1="10" x2="8" y2="18"/><line x1="8" y1="7" x2="8" y2="7.5" stroke-width="2.5"/><path d="M12 10v8M12 14c0-2 1.5-4 4-4v8"/></svg></div>
+          <div class="pie-red"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></div>
+        </div>
+      </div>
+      <div class="pie-columna">
+        <h5>Servicios</h5>
+        <ul>
+          <li><a href="servicios.html">Impresión Digital</a></li>
+          <li><a href="servicios.html">Gran Formato</a></li>
+          <li><a href="servicios.html">Packaging</a></li>
+          <li><a href="servicios.html">Cartelería</a></li>
+          <li><a href="servicios.html">Regalo Promocional</a></li>
+        </ul>
+      </div>
+      <div class="pie-columna">
+        <h5>Empresa</h5>
+        <ul>
+          <li><a href="nosotros.html">Sobre nosotros</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="presupuesto.html">Solicitar presupuesto</a></li>
+        </ul>
+      </div>
+      <div class="pie-columna">
+        <h5>Contacto</h5>
+        <ul>
+          <li><a>hola@impronta.es</a></li>
+          <li><a>+34 910 000 000</a></li>
+          <li><a>Lun–Vie 9h–18h</a></li>
+          <li><a>Calle Gráfica 24, 28045 Madrid</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pie-inferior">
+      <p>© 2025 Impronta Servicios Gráficos SL. Todos los derechos reservados.</p>
+      <div class="pie-legal">
+        <a href="Legal/aviso-legal.html">Aviso legal</a>
+        <a href="Legal/privacidad.html">Privacidad</a>
+        <a href="Legal/cookies.html">Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- BANNER COOKIES -->
+<div class="aviso-cookies" id="bannerCookies">
+  <div class="aviso-cookies-texto">
+    <p>Usamos cookies propias y de terceros para mejorar tu experiencia. <a href="Legal/cookies.html">Más información</a></p>
+  </div>
+  <div class="aviso-cookies-botones">
+    <button class="boton-cookies boton-aceptar" onclick="aceptarCookies()">Aceptar</button>
+  </div>
+</div>
+
+<script src="scripts.js"></script>
+</body>
+</html>

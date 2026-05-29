@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diseña tu Tarjeta — Impronta</title>
+  <meta name="description" content="Diseña y descarga una vista previa de tu tarjeta de visita personalizada con el estilo de Impronta. Herramienta gratuita.">
+  <meta property="og:type"        content="website">
+  <meta property="og:title"       content="Diseña tu Tarjeta — Impronta">
+  <meta property="og:description" content="Personaliza tu tarjeta de visita y descárgala en segundos. Gratis y sin registro.">
+  <meta property="og:url"         content="https://impronta.es/tarjeta">
+  <meta property="og:image"       content="https://impronta.es/og-image.jpg">
+  <meta property="og:locale"      content="es_ES">
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+  <script src="https://unpkg.com/lucide@0.429.0/dist/umd/lucide.js" defer></script>
+  <!-- html2canvas: convierte el div de la tarjeta en PNG descargable -->
+  <script src="https://unpkg.com/html2canvas@1.4.1/dist/html2canvas.min.js" defer></script>
+</head>
+<body>
+
+<!-- ── NAVEGACIÓN ── -->
+<nav>
+  <a class="nav-logo" href="index.html">
+    <img src="logo-impronta.png" alt="Impronta" width="400" height="218" style="height:54px;width:auto;display:block">
+  </a>
+  <ul class="nav-enlaces">
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="servicios.html">Servicios</a></li>
+    <li><a href="nosotros.html">Nosotros</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="tarjeta.html" class="nav-tarjeta activo">Tu tarjeta</a></li>
+    <li><a href="presupuesto.html" class="nav-llamada-accion">Presupuesto</a></li>
+  </ul>
+  <button class="btn-tema" id="btnTema" onclick="cambiarTema()">&#127769;</button>
+  <button class="nav-hamburgesa" onclick="abrirMenu()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- menú desplegable móvil -->
+<div class="nav-menu-movil" id="menuMovil">
+  <a href="index.html">Inicio</a>
+  <a href="servicios.html">Servicios</a>
+  <a href="nosotros.html">Nosotros</a>
+  <a href="blog.html">Blog</a>
+  <a href="tarjeta.html">Tu tarjeta</a>
+  <a href="presupuesto.html" style="color:var(--oro)">Solicitar presupuesto →</a>
+</div>
+
+
+<!-- ── CABECERA ── -->
+<div class="cabecera-pagina relleno-nav">
+  <div class="cabecera-overlay"></div>
+  <div class="contenedor">
+    <span class="supratitulo">Herramienta gratuita</span>
+    <h1>Diseña tu tarjeta de visita</h1>
+    <p>Escribe tus datos y obtén una vista previa descargable al instante.<br>
+       ¿Te convence el resultado? La imprimimos desde una sola unidad.</p>
+  </div>
+</div>
+
+
+<main>
+<section class="tc-seccion-fondo" style="padding:80px 0 100px">
+  <div class="contenedor">
+    <div class="tc-disposicion">
+
+      <!-- ══════════════ FORMULARIO ══════════════ -->
+      <div class="tc-form-zona">
+        <div class="caja-formulario" style="padding:40px 36px">
+
+          <h2 style="font-size:1.35rem;margin-bottom:6px">Tus datos</h2>
+          <p style="font-size:0.82rem;margin-bottom:32px">Los cambios aparecen en la tarjeta en tiempo real.</p>
+
+          <div class="grupo-campo">
+            <label class="etiqueta-campo" for="tc-nombre">Nombre completo</label>
+            <input class="campo-texto" type="text" id="tc-nombre"
+                   placeholder="Ana García Martínez" maxlength="38"
+                   data-preview="nombre">
+          </div>
+
+          <div class="grupo-campo">
+            <label class="etiqueta-campo" for="tc-cargo">Cargo / Puesto</label>
+            <input class="campo-texto" type="text" id="tc-cargo"
+                   placeholder="Diseñadora Gráfica Senior" maxlength="38"
+                   data-preview="cargo">
+          </div>
+
+          <div class="grupo-campo">
+            <label class="etiqueta-campo" for="tc-empresa">Empresa</label>
+            <input class="campo-texto" type="text" id="tc-empresa"
+                   placeholder="Mi Empresa SL" maxlength="28"
+                   data-preview="empresa">
+          </div>
+
+          <div class="fila-campos">
+            <div class="grupo-campo">
+              <label class="etiqueta-campo" for="tc-tel">Teléfono</label>
+              <input class="campo-texto" type="tel" id="tc-tel"
+                     placeholder="+34 600 000 000" maxlength="18"
+                     data-preview="tel">
+            </div>
+            <div class="grupo-campo">
+              <label class="etiqueta-campo" for="tc-email">Email</label>
+              <input class="campo-texto" type="email" id="tc-email"
+                     placeholder="ana@empresa.com" maxlength="34"
+                     data-preview="email">
+            </div>
+          </div>
+
+          <!-- Selector de estilo -->
+          <div class="grupo-campo" style="margin-bottom:0">
+            <label class="etiqueta-campo">Estilo de tarjeta</label>
+            <div class="tc-estilos">
+              <button class="tc-estilo-btn activo" data-estilo="azul" type="button">
+                <span class="tc-muestra" style="background:#1B2A4A"></span>Clásico
+              </button>
+              <button class="tc-estilo-btn" data-estilo="crema" type="button">
+                <span class="tc-muestra" style="background:#F5F0E8;border:1px solid #D6CFC0"></span>Crema
+              </button>
+              <button class="tc-estilo-btn" data-estilo="oro" type="button">
+                <span class="tc-muestra" style="background:linear-gradient(135deg,#C9A84C,#1B2A4A)"></span>Dorado
+              </button>
+            </div>
+          </div>
+
+        </div><!-- /caja-formulario -->
+
+        <!-- Botones de acción -->
+        <div class="tc-acciones">
+          <button class="btn btn-outline" id="btn-voltear" type="button">
+            <i data-lucide="refresh-cw" size="15"></i>
+            Voltear tarjeta
+          </button>
+          <button class="btn btn-gold" id="btn-descargar" type="button">
+            <i data-lucide="download" size="15"></i>
+            Descargar tarjeta
+          </button>
+        </div>
+
+        <!-- CTA a presupuesto -->
+        <div class="tc-cta-real">
+          <i data-lucide="printer" size="15"></i>
+          <span>
+            ¿Quieres imprimirla de verdad?
+            <a href="presupuesto.html">Solicita tu presupuesto, desde 1 unidad →</a>
+          </span>
+        </div>
+
+      </div><!-- /tc-form-zona -->
+
+
+      <!-- ══════════════ PREVIEW ══════════════ -->
+      <div class="tc-preview-zona">
+
+        <!-- Escena 3D -->
+        <div class="tc-escena" aria-label="Vista previa de la tarjeta de visita">
+          <div class="tc-hover-hint" aria-hidden="true">Clic · Voltear tarjeta</div>
+          <div class="tc-giro" id="tc-giro">
+
+            <!-- ANVERSO ─────────────────────── -->
+            <div class="tc-cara tc-anverso" id="tc-cara-frente">
+
+              <!-- franja de color izquierda -->
+              <div class="tc-acento" id="tc-acento"></div>
+
+              <!-- logo impronta arriba -->
+              <div class="tc-header">
+                <img src="logo-impronta.png" alt="Impronta"
+                     class="tc-logo-marca" id="tc-logo-marca">
+              </div>
+
+              <!-- nombre y cargo -->
+              <div class="tc-cuerpo">
+                <div class="tc-nombre" id="prev-nombre">Ana García Martínez</div>
+                <div class="tc-cargo" id="prev-cargo">Diseñadora Gráfica</div>
+                <div class="tc-empresa" id="prev-empresa">Mi Empresa SL</div>
+              </div>
+
+              <!-- datos de contacto -->
+              <div class="tc-contacto">
+                <div class="tc-dato" id="prev-tel">+34 600 000 000</div>
+                <div class="tc-dato" id="prev-email">ana@empresa.com</div>
+              </div>
+
+              <!-- marca de agua diagonal -->
+              <div class="tc-marca-agua" aria-hidden="true">IMPRONTA</div>
+
+            </div><!-- /tc-anverso -->
+
+
+            <!-- REVERSO ─────────────────────── -->
+            <div class="tc-cara tc-reverso">
+
+              <!-- marco decorativo -->
+              <div class="tc-reverso-marco"></div>
+
+              <div class="tc-reverso-inner">
+                <img src="logo-impronta.png" alt="Impronta" class="tc-logo-reverso">
+                <div class="tc-reverso-empresa" id="prev-empresa-rev">Mi Empresa SL</div>
+                <div class="tc-reverso-linea"></div>
+                <div class="tc-reverso-tagline">
+                  <em>Impresa con cariño por Impronta</em>
+                </div>
+              </div>
+
+              <!-- marca de agua reverso -->
+              <div class="tc-marca-agua tc-marca-agua--clara" aria-hidden="true">IMPRONTA</div>
+
+            </div><!-- /tc-reverso -->
+
+          </div><!-- /tc-giro -->
+        </div><!-- /tc-escena -->
+
+        <p class="tc-nota">
+          <i data-lucide="info" size="13"></i>
+          Vista previa orientativa · La descarga incluye marca de agua de Impronta
+        </p>
+
+        <!-- indicador de cara -->
+        <div class="tc-indicador">
+          <span class="tc-ind-item activo" id="ind-frente">Anverso</span>
+          <span class="tc-ind-sep">·</span>
+          <span class="tc-ind-item" id="ind-reverso">Reverso</span>
+        </div>
+
+      </div><!-- /tc-preview-zona -->
+
+    </div><!-- /tc-disposicion -->
+  </div><!-- /contenedor -->
+</section>
+</main>
+
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="contenedor">
+    <div class="pie-cuadricula">
+      <div class="pie-marca">
+        <a href="index.html" style="display:block;margin-bottom:16px">
+          <img src="logo-impronta.png" alt="Impronta" style="height:110px;width:auto;display:block">
+        </a>
+        <p>Servicios gráficos e imprenta en Madrid. Sin tirada mínima, sin tecnicismos, sin sorpresas.</p>
+        <div class="pie-redes">
+          <div class="pie-red"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></div>
+          <div class="pie-red"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="2"/><line x1="8" y1="10" x2="8" y2="18"/><line x1="8" y1="7" x2="8" y2="7.5" stroke-width="2.5"/><path d="M12 10v8M12 14c0-2 1.5-4 4-4v8"/></svg></div>
+          <div class="pie-red"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></div>
+        </div>
+      </div>
+      <div class="pie-columna">
+        <h5>Servicios</h5>
+        <ul>
+          <li><a href="servicios.html">Impresión Digital</a></li>
+          <li><a href="servicios.html">Gran Formato</a></li>
+          <li><a href="servicios.html">Packaging</a></li>
+          <li><a href="servicios.html">Cartelería</a></li>
+          <li><a href="servicios.html">Regalo Promocional</a></li>
+        </ul>
+      </div>
+      <div class="pie-columna">
+        <h5>Empresa</h5>
+        <ul>
+          <li><a href="nosotros.html">Sobre nosotros</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="presupuesto.html">Solicitar presupuesto</a></li>
+        </ul>
+      </div>
+      <div class="pie-columna">
+        <h5>Contacto</h5>
+        <ul>
+          <li><a>hola@impronta.es</a></li>
+          <li><a>+34 910 000 000</a></li>
+          <li><a>Lun–Vie 9h–18h</a></li>
+          <li><a>Calle Gráfica 24, 28045 Madrid</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pie-inferior">
+      <p>© 2025 Impronta Servicios Gráficos SL. Todos los derechos reservados.</p>
+      <div class="pie-legal">
+        <a href="Legal/aviso-legal.html">Aviso legal</a>
+        <a href="Legal/privacidad.html">Privacidad</a>
+        <a href="Legal/cookies.html">Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ── BANNER COOKIES ── -->
+<div class="aviso-cookies" id="bannerCookies">
+  <div class="aviso-cookies-texto">
+    <p>Usamos cookies propias y de terceros para mejorar tu experiencia.
+       <a href="Legal/cookies.html">Más información</a></p>
+  </div>
+  <button class="boton-aceptar btn btn-gold" onclick="aceptarCookies()">Aceptar</button>
+</div>
+
+
+<!-- ── SCRIPTS ── -->
+<script src="scripts.js"></script>
+<script>
+/* ============================================================
+   tarjeta.js — lógica del generador de tarjeta de visita
+   ============================================================
+
+   Sin librerías extra salvo html2canvas (cargada arriba con defer).
+   Tres bloques:
+     1. Preview en tiempo real  (~10 líneas)
+     2. Cambio de estilo        (~20 líneas)
+     3. Volteo + descarga       (~15 líneas)
+   ============================================================ */
+
+/* ── Definición de estilos ──────────────────────────────── */
+var ESTILOS = {
+  azul: {
+    bg:          'linear-gradient(135deg, #1B2A4A 0%, #1e3159 100%)',
+    nombre:      '#ffffff',
+    cargo:       '#C9A84C',
+    empresa:     'rgba(255,255,255,0.55)',
+    dato:        'rgba(255,255,255,0.72)',
+    acento:      '#C9A84C',
+    logoFilter:  'brightness(0) invert(1)'   /* logo blanco sobre oscuro */
+  },
+  crema: {
+    bg:          '#F5F0E8',
+    nombre:      '#1B2A4A',
+    cargo:       '#1B2A4A',
+    empresa:     '#6b7280',
+    dato:        '#4a5568',
+    acento:      '#1B2A4A',
+    logoFilter:  'none'                       /* logo en color sobre claro */
+  },
+  oro: {
+    bg:          'linear-gradient(140deg, #1B2A4A 0%, #243659 55%, #2e4a1e 100%)',
+    /* tono verdoso en punta para dar sensación de dorado impreso */
+    nombre:      '#ffffff',
+    cargo:       '#E2C97E',
+    empresa:     'rgba(255,255,255,0.55)',
+    dato:        'rgba(255,255,255,0.72)',
+    acento:      '#E2C97E',
+    logoFilter:  'brightness(0) invert(1)'
+  }
+};
+/* Nota: el estilo 'oro' usa un degradado ficticio porque CSS no permite
+   un color de fondo uniforme de verdadero oro que sea legible para texto.
+   Aquí simulamos la sensación con azul profundo + tono cálido. */
+
+var estiloActual = 'azul';
+
+
+/* ── 1. Preview en tiempo real ──────────────────────────── */
+document.querySelectorAll('[data-preview]').forEach(function(input) {
+  input.addEventListener('input', function() {
+    var campo = this.dataset.preview;
+    var el    = document.getElementById('prev-' + campo);
+    if (el) {
+      el.textContent = this.value;
+      /* destello sutil para confirmar que la tarjeta se actualiza */
+      el.classList.remove('tc-flash');
+      void el.offsetWidth; /* forzar reflow para reiniciar la animación */
+      el.classList.add('tc-flash');
+    }
+
+    /* sincronizar empresa también en el reverso */
+    if (campo === 'empresa') {
+      var rev = document.getElementById('prev-empresa-rev');
+      if (rev) rev.textContent = this.value;
+    }
+  });
+});
+
+
+/* ── 2. Selector de estilos ─────────────────────────────── */
+function aplicarEstilo(nombre) {
+  var s    = ESTILOS[nombre];
+  var cara = document.getElementById('tc-cara-frente');
+
+  cara.style.background = s.bg;
+
+  document.getElementById('prev-nombre').style.color  = s.nombre;
+  document.getElementById('prev-cargo').style.color   = s.cargo;
+  document.getElementById('prev-empresa').style.color = s.empresa;
+  document.getElementById('prev-tel').style.color     = s.dato;
+  document.getElementById('prev-email').style.color   = s.dato;
+  document.getElementById('tc-acento').style.background = s.acento;
+  document.getElementById('tc-logo-marca').style.filter = s.logoFilter;
+
+  estiloActual = nombre;
+}
+
+document.querySelectorAll('.tc-estilo-btn').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('.tc-estilo-btn')
+            .forEach(function(b) { b.classList.remove('activo'); });
+    this.classList.add('activo');
+    aplicarEstilo(this.dataset.estilo);
+  });
+});
+
+
+/* ── 3. Voltear tarjeta ─────────────────────────────────── */
+var volteada = false;
+
+document.getElementById('btn-voltear').addEventListener('click', function() {
+  volteada = !volteada;
+  document.getElementById('tc-giro').classList.toggle('volteada', volteada);
+
+  /* actualizar indicador de cara */
+  document.getElementById('ind-frente').classList.toggle('activo', !volteada);
+  document.getElementById('ind-reverso').classList.toggle('activo',  volteada);
+});
+
+
+/* ── 4. Clic directo sobre la tarjeta para voltearla ────── */
+document.querySelector('.tc-escena').addEventListener('click', function() {
+  volteada = !volteada;
+  document.getElementById('tc-giro').classList.toggle('volteada', volteada);
+  document.getElementById('ind-frente').classList.toggle('activo', !volteada);
+  document.getElementById('ind-reverso').classList.toggle('activo',  volteada);
+});
+
+
+/* ── 5. Descarga PNG — anverso + reverso ────────────────── */
+/*
+   Captura secuencial de ambas caras:
+   1. Aplanar contexto 3D (preserve-3d rompe html2canvas)
+   2. Pre-convertir logos a dataURL (evita canvas tainted por XHR)
+   3. Capturar anverso → capturar reverso → descargar ambos
+   Escala × 3 → ~1140 × 690 px por cara, resolución de impresión.
+*/
+document.getElementById('btn-descargar').addEventListener('click', function() {
+  var btn = this;
+
+  if (typeof html2canvas === 'undefined') {
+    alert('La librería aún se está cargando. Espera un momento e inténtalo de nuevo.');
+    return;
+  }
+
+  btn.disabled = true;
+  btn.classList.add('tc-cargando');
+  btn.innerHTML = '<i data-lucide="loader" size="15"></i> Generando…';
+  if (typeof lucide !== 'undefined') lucide.createIcons();
+
+  var giro      = document.getElementById('tc-giro');
+  var cara      = document.getElementById('tc-cara-frente');
+  var reverso   = giro.querySelector('.tc-reverso');
+  var logoEl    = document.getElementById('tc-logo-marca');
+  var revLogoEl = reverso ? reverso.querySelector('img') : null;
+  var wasVolteada = volteada;
+
+  /* ── Pre-convertir logo a dataURL (mismo PNG para ambas caras) ── */
+  var logoDataURL = null;
+  var anyLogo = logoEl || revLogoEl;
+  if (anyLogo && anyLogo.complete && anyLogo.naturalWidth > 0) {
+    try {
+      var tc0 = document.createElement('canvas');
+      tc0.width  = anyLogo.naturalWidth;
+      tc0.height = anyLogo.naturalHeight;
+      tc0.getContext('2d').drawImage(anyLogo, 0, 0);
+      logoDataURL = tc0.toDataURL();
+    } catch(e) {}
+  }
+  if (logoEl)    { if (logoDataURL) logoEl.src    = logoDataURL; else logoEl.style.visibility    = 'hidden'; }
+  if (revLogoEl) { if (logoDataURL) revLogoEl.src = logoDataURL; else revLogoEl.style.visibility = 'hidden'; }
+
+  /* ── Aplanar contexto 3D y mostrar anverso ── */
+  if (wasVolteada) giro.classList.remove('volteada');
+  giro.style.transformStyle           = 'flat';
+  giro.style.transform                = 'none';
+  cara.style.backfaceVisibility       = 'visible';
+  cara.style.webkitBackfaceVisibility = 'visible';
+
+  var canvasAnverso = null;
+
+  function restaurar() {
+    giro.style.transformStyle              = '';
+    giro.style.transform                   = '';
+    cara.style.backfaceVisibility          = '';
+    cara.style.webkitBackfaceVisibility    = '';
+    cara.style.visibility                  = '';
+    if (reverso) {
+      reverso.style.transform              = '';
+      reverso.style.backfaceVisibility     = '';
+      reverso.style.webkitBackfaceVisibility = '';
+    }
+    if (wasVolteada) giro.classList.add('volteada');
+    var src = 'logo-impronta.png';
+    if (logoEl)    { logoEl.src    = src; logoEl.style.visibility    = ''; }
+    if (revLogoEl) { revLogoEl.src = src; revLogoEl.style.visibility = ''; }
+  }
+
+  function resetBtn() {
+    btn.disabled = false;
+    btn.classList.remove('tc-cargando');
+    btn.innerHTML = '<i data-lucide="download" size="15"></i> Descargar tarjeta';
+    if (typeof lucide !== 'undefined') lucide.createIcons();
+  }
+
+  function capturarReverso() {
+    /* Ocultar anverso y mostrar reverso en plano 2D */
+    cara.style.visibility                  = 'hidden';
+    reverso.style.transform                = 'none';
+    reverso.style.backfaceVisibility       = 'visible';
+    reverso.style.webkitBackfaceVisibility = 'visible';
+
+    setTimeout(function() {
+      html2canvas(reverso, {
+        scale: 3, useCORS: false, allowTaint: false,
+        backgroundColor: null, logging: false
+      }).then(function(canvasRev) {
+        restaurar();
+
+        /* Descargar anverso */
+        var a1 = document.createElement('a');
+        a1.href = canvasAnverso.toDataURL('image/png');
+        a1.download = 'tarjeta-impronta-anverso.png';
+        a1.click();
+
+        /* Descargar reverso con pequeño retardo */
+        setTimeout(function() {
+          var a2 = document.createElement('a');
+          a2.href = canvasRev.toDataURL('image/png');
+          a2.download = 'tarjeta-impronta-reverso.png';
+          a2.click();
+        }, 350);
+
+        resetBtn();
+
+      }).catch(function(err) {
+        restaurar(); resetBtn();
+        console.error('Error reverso:', err);
+        alert('Error al generar reverso: ' + (err.message || err));
+      });
+    }, 150);
+  }
+
+  /* ── Capturar ANVERSO primero ── */
+  setTimeout(function() {
+    html2canvas(cara, {
+      scale: 3, useCORS: false, allowTaint: false,
+      backgroundColor: null, logging: false
+    }).then(function(canvas) {
+      canvasAnverso = canvas;
+      capturarReverso();
+    }).catch(function(err) {
+      restaurar(); resetBtn();
+      console.error('Error anverso:', err);
+      alert('Error al generar anverso: ' + (err.message || err));
+    });
+  }, 150);
+});
+</script>
+
+</body>
+</html>

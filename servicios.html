@@ -1,0 +1,287 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Servicios — Impronta</title>
+  <meta name="description" content="Servicios gráficos en Madrid: impresión digital, gran formato, packaging, cartelería y regalo promocional. Sin tirada mínima.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Servicios — Impronta">
+  <meta property="og:description" content="Servicios gráficos en Madrid: impresión digital, gran formato, packaging, cartelería y regalo promocional. Sin tirada mínima.">
+  <meta property="og:url" content="https://impronta.es/servicios">
+  <meta property="og:image" content="https://impronta.es/og-image.jpg">
+  <meta property="og:locale" content="es_ES">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+  <script src="https://unpkg.com/lucide@0.429.0/dist/umd/lucide.js" defer></script>
+</head>
+<body>
+
+<!-- NAVEGACIÓN -->
+<nav>
+  <a class="nav-logo" href="index.html"><img src="logo-impronta.png" alt="Impronta" width="400" height="218" style="height:54px;width:auto;display:block"></a>
+  <ul class="nav-enlaces">
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="servicios.html" class="activo">Servicios</a></li>
+    <li><a href="nosotros.html">Nosotros</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="tarjeta.html" class="nav-tarjeta">Tu tarjeta</a></li>
+    <li><a href="presupuesto.html" class="nav-llamada-accion">Presupuesto</a></li>
+  </ul>
+  <button class="btn-tema" id="btnTema" onclick="cambiarTema()">&#127769;</button>
+  <button class="nav-hamburgesa" onclick="abrirMenu()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="nav-menu-movil" id="menuMovil">
+  <a href="index.html">Inicio</a>
+  <a href="servicios.html">Servicios</a>
+  <a href="nosotros.html">Nosotros</a>
+  <a href="blog.html">Blog</a>
+  <a href="presupuesto.html" style="color:var(--oro)">Solicitar presupuesto →</a>
+</div>
+
+
+<!-- HERO -->
+<div class="cabecera-pagina relleno-nav">
+  <div class="cabecera-overlay"></div>
+  <div class="contenedor">
+    <span class="supratitulo">Lo que hacemos</span>
+    <h1>Nuestros servicios</h1>
+    <p>Desde una tarjeta de visita hasta una lona de 5 metros. Sin tirada mínima, con asesoramiento incluido.</p>
+  </div>
+</div>
+
+
+<main>
+<!-- LISTA DE SERVICIOS -->
+<section class="servicios-lista" style="padding:0">
+
+  <div class="servicio-elemento">
+    <div class="servicio-elemento-img">
+      <!-- Cambia "foto-impresion-digital.jpg" por una foto de tarjetas, flyers, etc. -->
+      <img src="Imagenes/foto-impresion-digital.png" alt="Impresión Digital" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
+    </div>
+    <div class="servicio-elemento-texto">
+      <span class="supratitulo">01 — Digital</span>
+      <h2>Impresión Digital</h2>
+      <div class="miga-separador-oro"></div>
+      <p>La solución ideal para tiradas cortas y plazos ajustados. Tarjetas de visita, flyers, dípticos, trípticos, catálogos y mucho más.</p>
+      <ul class="servicio-caracteristicas">
+        <li>Sin tirada mínima — desde 1 unidad</li>
+        <li>Acabados: plastificado brillo/mate, barniz UV, troquelado</li>
+        <li>Entrega estándar en 48h laborables</li>
+        <li>Revisión de archivo gratuita</li>
+      </ul>
+      <a href="presupuesto.html" class="btn btn-primary">Pedir presupuesto</a>
+    </div>
+  </div>
+
+  <div class="servicio-elemento">
+    <div class="servicio-elemento-img">
+      <!-- Cambia "foto-gran-formato.jpg" por una foto de lonas, vinilos, etc. -->
+      <img src="Imagenes/foto-gran-formato.png" alt="Gran Formato" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
+    </div>
+    <div class="servicio-elemento-texto">
+      <span class="supratitulo">02 — Exterior</span>
+      <h2>Gran Formato</h2>
+      <div class="miga-separador-oro"></div>
+      <p>Lonas, vinilos adhesivos, roll-ups, tótems y carteles de gran tamaño. Impresión UV resistente a la intemperie.</p>
+      <ul class="servicio-caracteristicas">
+        <li>Hasta 5m de ancho en un solo panel</li>
+        <li>Tinta UV resistente a rayos UV y lluvia</li>
+        <li>Ojales, bolsillos y sistemas de sujeción</li>
+        <li>Instalación disponible bajo consulta</li>
+      </ul>
+      <a href="presupuesto.html" class="btn btn-primary">Pedir presupuesto</a>
+    </div>
+  </div>
+
+  <div class="servicio-elemento">
+    <div class="servicio-elemento-img">
+      <!-- Cambia "foto-packaging.jpg" por una foto de cajas, bolsas, etc. -->
+      <img src="Imagenes/foto-packaging.png" alt="Packaging" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
+    </div>
+    <div class="servicio-elemento-texto">
+      <span class="supratitulo">03 — Envases</span>
+      <h2>Packaging</h2>
+      <div class="miga-separador-oro"></div>
+      <p>Cajas, bolsas, etiquetas y envases personalizados que reflejan la personalidad de tu marca.</p>
+      <ul class="servicio-caracteristicas">
+        <li>Cajas de cartón kraft o estucado</li>
+        <li>Bolsas papel con asa plana o cordón</li>
+        <li>Etiquetas adhesivas en rollo o hoja</li>
+        <li>Troqueles personalizados disponibles</li>
+      </ul>
+      <a href="presupuesto.html" class="btn btn-primary">Pedir presupuesto</a>
+    </div>
+  </div>
+
+  <div class="servicio-elemento">
+    <div class="servicio-elemento-img">
+      <!-- Cambia "foto-carteleria.jpg" por una foto de señalética, pósters, etc. -->
+      <img src="Imagenes/foto-carteleria.png" alt="Cartelería" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
+    </div>
+    <div class="servicio-elemento-texto">
+      <span class="supratitulo">04 — Señalética</span>
+      <h2>Cartelería</h2>
+      <div class="miga-separador-oro"></div>
+      <p>Señalética para oficinas y locales, pósters, displays y materiales de punto de venta.</p>
+      <ul class="servicio-caracteristicas">
+        <li>PVC rígido, forex, aluminio dibond</li>
+        <li>Señalética con normativa accesibilidad</li>
+        <li>Montaje sobre pared o autoportante</li>
+        <li>Servicio de diseño incluido bajo consulta</li>
+      </ul>
+      <a href="presupuesto.html" class="btn btn-primary">Pedir presupuesto</a>
+    </div>
+  </div>
+
+  <div class="servicio-elemento">
+    <div class="servicio-elemento-img">
+      <!-- Cambia "foto-regalo-promocional.jpg" por una foto de artículos promocionales -->
+      <img src="Imagenes/foto-regalo-promocional.png" alt="Regalo Promocional" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
+    </div>
+    <div class="servicio-elemento-texto">
+      <span class="supratitulo">05 — Corporativo</span>
+      <h2>Regalo Promocional</h2>
+      <div class="miga-separador-oro"></div>
+      <p>Artículos personalizados con el logo de tu empresa para eventos, ferias y campañas de fidelización.</p>
+      <ul class="servicio-caracteristicas">
+        <li>Catálogo de más de 500 referencias</li>
+        <li>Impresión, bordado o grabado láser</li>
+        <li>Packaging y embolsado incluido</li>
+        <li>Entrega en evento bajo consulta</li>
+      </ul>
+      <a href="presupuesto.html" class="btn btn-primary">Pedir presupuesto</a>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- FAQ -->
+<section class="seccion-faq">
+  <div class="contenedor">
+    <div style="text-align:center">
+      <span class="supratitulo">Preguntas frecuentes</span>
+      <h2>Lo que más nos preguntan</h2>
+    </div>
+    <div class="faq-cuadricula">
+      <div class="faq-elemento">
+        <div class="faq-pregunta" tabindex="0" role="button" aria-expanded="false" aria-controls="faq-1">
+          ¿Hay pedido mínimo?
+          <i class="faq-icono" data-lucide="plus" size="18"></i>
+        </div>
+        <div class="faq-respuesta" id="faq-1">Para impresión digital, no. Puedes pedir desde una sola unidad. Para offset y packaging personalizado, depende del formato; te lo indicamos en el presupuesto.</div>
+      </div>
+      <div class="faq-elemento">
+        <div class="faq-pregunta" tabindex="0" role="button" aria-expanded="false" aria-controls="faq-2">
+          ¿Cuál es el plazo de entrega?
+          <i class="faq-icono" data-lucide="plus" size="18"></i>
+        </div>
+        <div class="faq-respuesta" id="faq-2">El plazo estándar es de 48 horas laborables desde la aprobación del archivo. Para pedidos urgentes disponemos de servicio express de 24h con coste adicional.</div>
+      </div>
+      <div class="faq-elemento">
+        <div class="faq-pregunta" tabindex="0" role="button" aria-expanded="false" aria-controls="faq-3">
+          ¿En qué formato debo enviar los archivos?
+          <i class="faq-icono" data-lucide="plus" size="18"></i>
+        </div>
+        <div class="faq-respuesta" id="faq-3">Preferiblemente en PDF con marcas de corte, 3mm de sangría y colores en CMYK. Si no sabes cómo prepararlo, cuéntanoslo: te guiamos o lo preparamos nosotros.</div>
+      </div>
+      <div class="faq-elemento">
+        <div class="faq-pregunta" tabindex="0" role="button" aria-expanded="false" aria-controls="faq-4">
+          ¿Hacéis envíos fuera de Madrid?
+          <i class="faq-icono" data-lucide="plus" size="18"></i>
+        </div>
+        <div class="faq-respuesta" id="faq-4">Sí. Enviamos a toda España mediante mensajería urgente. El coste de envío se calcula en función del peso y el destino y se indica antes de confirmar el pedido.</div>
+      </div>
+      <div class="faq-elemento">
+        <div class="faq-pregunta" tabindex="0" role="button" aria-expanded="false" aria-controls="faq-5">
+          ¿Puedo ver una prueba antes de imprimir?
+          <i class="faq-icono" data-lucide="plus" size="18"></i>
+        </div>
+        <div class="faq-respuesta" id="faq-5">Sí. Enviamos prueba digital (PDF con simulación de color) en todos los pedidos. Para tiradas grandes, disponemos de prueba en papel bajo consulta.</div>
+      </div>
+      <div class="faq-elemento">
+        <div class="faq-pregunta" tabindex="0" role="button" aria-expanded="false" aria-controls="faq-6">
+          ¿Qué pasa si el resultado no es el esperado?
+          <i class="faq-icono" data-lucide="plus" size="18"></i>
+        </div>
+        <div class="faq-respuesta" id="faq-6">Si el error es nuestro, reimprimimos sin coste y con entrega prioritaria. Si el error está en el archivo original, buscamos la solución más conveniente para ti.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+</main>
+
+<footer>
+  <div class="contenedor">
+    <div class="pie-cuadricula">
+      <div class="pie-marca">
+        <a href="index.html" style="display:block;margin-bottom:16px"><img src="logo-impronta.png" alt="Impronta Servicios Gráficos" style="height:90px;width:auto;display:block"></a>
+        <p>Servicios gráficos e imprenta en Madrid. Sin tirada mínima, sin tecnicismos, sin sorpresas.</p>
+        <div class="pie-redes">
+          <div class="pie-red" title="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></div>
+          <div class="pie-red" title="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="2"/><line x1="8" y1="10" x2="8" y2="18"/><line x1="8" y1="7" x2="8" y2="7.5" stroke-width="2.5"/><path d="M12 10v8M12 14c0-2 1.5-4 4-4v8"/></svg></div>
+          <div class="pie-red" title="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></div>
+        </div>
+      </div>
+      <div class="pie-columna">
+        <h5>Servicios</h5>
+        <ul>
+          <li><a href="servicios.html">Impresión Digital</a></li>
+          <li><a href="servicios.html">Gran Formato</a></li>
+          <li><a href="servicios.html">Packaging</a></li>
+          <li><a href="servicios.html">Cartelería</a></li>
+          <li><a href="servicios.html">Regalo Promocional</a></li>
+        </ul>
+      </div>
+      <div class="pie-columna">
+        <h5>Empresa</h5>
+        <ul>
+          <li><a href="nosotros.html">Sobre nosotros</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="presupuesto.html">Solicitar presupuesto</a></li>
+        </ul>
+      </div>
+      <div class="pie-columna">
+        <h5>Contacto</h5>
+        <ul>
+          <li><a>hola@impronta.es</a></li>
+          <li><a>+34 910 000 000</a></li>
+          <li><a>Lun–Vie 9h–18h</a></li>
+          <li><a>Calle Gráfica 24, 28045 Madrid</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pie-inferior">
+      <p>© 2025 Impronta Servicios Gráficos SL. Todos los derechos reservados.</p>
+      <div class="pie-legal">
+        <a href="Legal/aviso-legal.html">Aviso legal</a>
+        <a href="Legal/privacidad.html">Privacidad</a>
+        <a href="Legal/cookies.html">Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- BANNER COOKIES -->
+<div class="aviso-cookies" id="bannerCookies">
+  <div class="aviso-cookies-texto">
+    <p>Usamos cookies propias y de terceros para mejorar tu experiencia. <a href="Legal/cookies.html">Más información</a></p>
+  </div>
+  <div class="aviso-cookies-botones">
+    <button class="boton-cookies boton-aceptar" onclick="aceptarCookies()">Aceptar</button>
+  </div>
+</div>
+
+<script src="scripts.js"></script>
+</body>
+</html>

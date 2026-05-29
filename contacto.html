@@ -1,0 +1,242 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto — Impronta</title>
+  <meta name="description" content="Contacta con Impronta en Madrid. Formulario de contacto, teléfono, email y dirección. Lunes a viernes 9h–18h.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Contacto — Impronta">
+  <meta property="og:description" content="Contacta con Impronta en Madrid. Formulario de contacto, teléfono, email y dirección. Lunes a viernes 9h–18h.">
+  <meta property="og:url" content="https://impronta.es/contacto">
+  <meta property="og:image" content="https://impronta.es/og-image.jpg">
+  <meta property="og:locale" content="es_ES">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+  <script src="https://unpkg.com/lucide@0.429.0/dist/umd/lucide.js" defer></script>
+</head>
+<body>
+
+<!-- NAVEGACIÓN -->
+<nav>
+  <a class="nav-logo" href="index.html"><img src="logo-impronta.png" alt="Impronta" width="400" height="218" style="height:54px;width:auto;display:block"></a>
+  <ul class="nav-enlaces">
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="servicios.html">Servicios</a></li>
+    <li><a href="nosotros.html">Nosotros</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="tarjeta.html" class="nav-tarjeta">Tu tarjeta</a></li>
+    <li><a href="presupuesto.html" class="nav-llamada-accion">Presupuesto</a></li>
+  </ul>
+  <button class="btn-tema" id="btnTema" onclick="cambiarTema()">&#127769;</button>
+  <button class="nav-hamburgesa" onclick="abrirMenu()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="nav-menu-movil" id="menuMovil">
+  <a href="index.html">Inicio</a>
+  <a href="servicios.html">Servicios</a>
+  <a href="nosotros.html">Nosotros</a>
+  <a href="blog.html">Blog</a>
+  <a href="presupuesto.html" style="color:var(--oro)">Solicitar presupuesto →</a>
+</div>
+
+<main>
+
+
+<!-- HERO -->
+<div class="cabecera-pagina relleno-nav">
+    <div class="cabecera-overlay"></div>
+  <div class="contenedor">
+    <span class="supratitulo">Presupuesto</span>
+    <h1>Cuéntanos tu proyecto</h1>
+    <p>Respondemos en menos de 24h · Sin compromiso · Sin tecnicismos</p>
+  </div>
+</div>
+
+
+<!-- CONTACTO -->
+<div class="seccion-fondo-crema" style="background:var(--crema)">
+  <div class="contenedor">
+    <div class="contacto-disposicion">
+
+      <!-- Info -->
+      <div>
+        <span class="supratitulo">Contacto</span>
+        <h2>Estamos en Madrid, trabajamos para toda España</h2>
+        <div class="miga-separador-oro"></div>
+        <p style="margin-bottom:32px">Si tienes dudas sobre qué necesitas o no sabes por dónde empezar, escríbenos igualmente. Nos encanta ayudar a definir proyectos desde cero.</p>
+
+        <div class="contacto-datos">
+          <div class="contacto-dato">
+            <div class="contacto-icono"><i data-lucide="map-pin" size="18"></i></div>
+            <div class="contacto-texto-dato">
+              <strong>Dirección</strong>
+              <span>Calle Gráfica 24, Nave B · 28045 Madrid</span>
+            </div>
+          </div>
+          <div class="contacto-dato">
+            <div class="contacto-icono"><i data-lucide="phone" size="18"></i></div>
+            <div class="contacto-texto-dato">
+              <strong>Teléfono</strong>
+              <span>+34 910 000 000</span>
+            </div>
+          </div>
+          <div class="contacto-dato">
+            <div class="contacto-icono"><i data-lucide="mail" size="18"></i></div>
+            <div class="contacto-texto-dato">
+              <strong>Email</strong>
+              <span>hola@impronta.es</span>
+            </div>
+          </div>
+          <div class="contacto-dato">
+            <div class="contacto-icono"><i data-lucide="clock" size="18"></i></div>
+            <div class="contacto-texto-dato">
+              <strong>Horario</strong>
+              <span>Lun – Vie · 9:00 – 18:00h</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mapa-marcador">
+          <i data-lucide="map-pin" size="20"></i>
+          <span>Mapa — Calle Gráfica 24, Madrid</span>
+        </div>
+      </div>
+
+      <!-- Formulario -->
+      <div>
+        <div class="caja-formulario">
+          <h3>Solicitar presupuesto</h3>
+          <p>Todos los campos marcados con * son obligatorios.</p>
+
+          <form id="formulario" onsubmit="enviarFormulario(event)">
+            <div class="fila-campos">
+              <div class="grupo-campo">
+                <label class="etiqueta-campo" for="nombre">Nombre *</label>
+                <input class="campo-texto" type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+              </div>
+              <div class="grupo-campo">
+                <label class="etiqueta-campo" for="empresa">Empresa</label>
+                <input class="campo-texto" type="text" id="empresa" name="empresa" placeholder="Nombre de tu empresa (opcional)">
+              </div>
+            </div>
+            <div class="fila-campos">
+              <div class="grupo-campo">
+                <label class="etiqueta-campo" for="email">Email *</label>
+                <input class="campo-texto" type="email" id="email" name="email" placeholder="tu@email.com" required>
+              </div>
+              <div class="grupo-campo">
+                <label class="etiqueta-campo" for="telefono">Teléfono</label>
+                <input class="campo-texto" type="tel" id="telefono" name="telefono" placeholder="+34 600 000 000">
+              </div>
+            </div>
+            <div class="grupo-campo">
+              <label class="etiqueta-campo" for="servicio">¿Qué servicio necesitas?</label>
+              <select class="campo-selector" id="servicio" name="servicio">
+                <option value="">Selecciona una opción</option>
+                <option>Impresión Digital (tarjetas, flyers...)</option>
+                <option>Gran Formato (lonas, vinilos...)</option>
+                <option>Packaging (cajas, bolsas...)</option>
+                <option>Cartelería y señalética</option>
+                <option>Regalo Promocional</option>
+                <option>No lo tengo claro aún</option>
+              </select>
+            </div>
+            <div class="grupo-campo">
+              <label class="etiqueta-campo" for="proyecto">Cuéntanos tu proyecto *</label>
+              <textarea class="campo-area" id="proyecto" name="proyecto" placeholder="Describe qué necesitas imprimir, en qué cantidad aproximada y para cuándo lo necesitas. No hace falta que conozcas la terminología — cuéntanoslo como puedas." required></textarea>
+            </div>
+            <div class="grupo-campo">
+              <label class="campo-casilla">
+                <input type="checkbox" id="privacidad" name="privacidad" required>
+                <span>He leído y acepto la <a href="Legal/privacidad.html">política de privacidad</a></span>
+              </label>
+            </div>
+            <button type="submit" class="btn btn-gold boton-enviar">
+              <i data-lucide="send" size="15"></i> Enviar solicitud
+            </button>
+          </form>
+
+          <div class="mensaje-exito" id="mensajeExito">
+            <p>✓ <strong>¡Tu solicitud se ha enviado correctamente!</strong><br>Te respondemos en menos de 24 horas en días laborables.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- FOOTER -->
+
+
+</main>
+<footer>
+  <div class="contenedor">
+    <div class="pie-cuadricula">
+      <div class="pie-marca">
+        <a href="index.html" style="display:block;margin-bottom:16px"><img src="logo-impronta.png" alt="Impronta" style="height:110px;width:auto;display:block"></a>
+        <p>Servicios gráficos e imprenta en Madrid. Sin tirada mínima, sin tecnicismos, sin sorpresas.</p>
+        <div class="pie-redes">
+          <div class="pie-red"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></div>
+          <div class="pie-red"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="2"/><line x1="8" y1="10" x2="8" y2="18"/><line x1="8" y1="7" x2="8" y2="7.5" stroke-width="2.5"/><path d="M12 10v8M12 14c0-2 1.5-4 4-4v8"/></svg></div>
+          <div class="pie-red"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></div>
+        </div>
+      </div>
+      <div class="pie-columna">
+        <h5>Servicios</h5>
+        <ul>
+          <li><a href="servicios.html">Impresión Digital</a></li>
+          <li><a href="servicios.html">Gran Formato</a></li>
+          <li><a href="servicios.html">Packaging</a></li>
+          <li><a href="servicios.html">Cartelería</a></li>
+          <li><a href="servicios.html">Regalo Promocional</a></li>
+        </ul>
+      </div>
+      <div class="pie-columna">
+        <h5>Empresa</h5>
+        <ul>
+          <li><a href="nosotros.html">Sobre nosotros</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="presupuesto.html">Solicitar presupuesto</a></li>
+        </ul>
+      </div>
+      <div class="pie-columna">
+        <h5>Contacto</h5>
+        <ul>
+          <li><a>hola@impronta.es</a></li>
+          <li><a>+34 910 000 000</a></li>
+          <li><a>Lun–Vie 9h–18h</a></li>
+          <li><a>Calle Gráfica 24, 28045 Madrid</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pie-inferior">
+      <p>© 2025 Impronta Servicios Gráficos SL. Todos los derechos reservados.</p>
+      <div class="pie-legal">
+        <a href="Legal/aviso-legal.html">Aviso legal</a>
+        <a href="Legal/privacidad.html">Privacidad</a>
+        <a href="Legal/cookies.html">Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- BANNER COOKIES -->
+<div class="aviso-cookies" id="bannerCookies">
+  <div class="aviso-cookies-texto">
+    <p>Usamos cookies propias y de terceros para mejorar tu experiencia. <a href="Legal/cookies.html">Más información</a></p>
+  </div>
+  <div class="aviso-cookies-botones">
+    <button class="boton-cookies boton-aceptar" onclick="aceptarCookies()">Aceptar</button>
+  </div>
+</div>
+
+<script src="scripts.js"></script>
+</body>
+</html>
