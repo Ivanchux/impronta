@@ -138,6 +138,53 @@ document.querySelectorAll('.faq-pregunta').forEach(function(pregunta) {
   });
 });
 
+/* ── Formulario de contacto (contacto.html) ── */
+function enviarFormulario(e) {
+  e.preventDefault();
+  var form    = document.getElementById('formulario');
+  var nombre  = document.getElementById('nombre');
+  var email   = document.getElementById('email');
+  var proyecto = document.getElementById('proyecto');
+  var privacidad = document.getElementById('privacidad');
+  var ok = true;
+
+  /* Limpiar errores previos */
+  form.querySelectorAll('.campo-error-inline').forEach(function(el) { el.remove(); });
+  form.querySelectorAll('.invalido').forEach(function(el) { el.classList.remove('invalido'); });
+
+  function marcarError(input, msg) {
+    input.classList.add('invalido');
+    var err = document.createElement('p');
+    err.className = 'campo-error campo-error-inline';
+    err.textContent = msg;
+    err.style.display = 'block';
+    input.parentNode.appendChild(err);
+    ok = false;
+  }
+
+  if (!nombre || !nombre.value.trim())  marcarError(nombre, 'Indica tu nombre.');
+  var emailVal = email ? email.value.trim() : '';
+  if (!emailVal || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal)) marcarError(email, 'Introduce un email válido.');
+  if (!proyecto || !proyecto.value.trim()) marcarError(proyecto, 'Cuéntanos tu proyecto.');
+  if (privacidad && !privacidad.checked) {
+    var errPriv = document.createElement('p');
+    errPriv.className = 'campo-error campo-error-inline';
+    errPriv.textContent = 'Debes aceptar la política de privacidad.';
+    errPriv.style.display = 'block';
+    privacidad.parentNode.parentNode.appendChild(errPriv);
+    ok = false;
+  }
+
+  if (!ok) return;
+
+  /* Mostrar confirmación */
+  var caja = document.querySelector('#formulario');
+  var conf = document.getElementById('mensajeExito');
+  if (caja) caja.style.display = 'none';
+  if (conf) { conf.style.display = 'block'; conf.classList.add('visible'); }
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
 /* ── Banner de cookies ── */
 function aceptarCookies() {
   localStorage.setItem('cookies', 'aceptado');
