@@ -30,9 +30,9 @@
 
 Proyecto de prácticas FCT del **Grado Superior ASIR (Telemática)** en CDMFp, curso 2025–2026.
 
-Consiste en el diseño y desarrollo completo de una **web corporativa ficticia** para una empresa de servicios gráficos e imprenta: **Impronta Servicios Gráficos SL**, basada en Aferta SG (Madrid).
+Consiste en el diseño y desarrollo completo de una **web corporativa ficticia** para una empresa de servicios gráficos e imprenta en Madrid: **Impronta Servicios Gráficos SL**.
 
-> **Alumno:** Iván Brihuega Crespo &nbsp;·&nbsp; **Empresa:** Aferta SG &nbsp;·&nbsp; **Módulo:** 0373 Lenguajes de Marcas
+> **Alumno:** Iván Brihuega Crespo &nbsp;·&nbsp; **Módulo:** 0373 Lenguajes de Marcas
 
 ---
 
