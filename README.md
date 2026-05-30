@@ -1,10 +1,8 @@
 <div align="center">
-  <br>
-  <img src="logo-impronta.png" height="90" alt="Impronta logo">
-  <br><br>
 
-  <h1>Impronta Servicios Gráficos SL</h1>
-  <p><em>Imprenta y servicios gráficos en Madrid · Sin tirada mínima · Sin tecnicismos</em></p>
+  <img src="banner-readme.svg" alt="Impronta Servicios Gráficos — Banner" width="100%">
+
+  <br>
 
   <a href="https://ivanchux.github.io/impronta/">
     <img src="https://img.shields.io/badge/🌐_Ver_la_web-ivanchux.github.io%2Fimpronta-1B2A4A?style=for-the-badge" alt="Web en vivo">
