@@ -20,8 +20,8 @@
 </head>
 <body>
 
-<!-- ── NAVEGACIÓN ── -->
-<nav>
+<!-- nav -->
+<nav aria-label="Menú principal">
   <a class="nav-logo" href="index.html">
     <img src="logo-impronta.png" alt="Impronta" width="400" height="218" style="height:54px;width:auto;display:block">
   </a>
@@ -50,7 +50,9 @@
 </div>
 
 
-<!-- ── CABECERA ── -->
+<main>
+
+<!-- cabecera -->
 <div class="cabecera-pagina relleno-nav">
   <div class="cabecera-overlay"></div>
   <div class="contenedor">
@@ -61,13 +63,11 @@
   </div>
 </div>
 
-
-<main>
-<section class="tc-seccion-fondo" style="padding:80px 0 100px">
+<section class="tc-seccion-fondo" aria-label="Generador de tarjetas de visita" style="padding:80px 0 100px">
   <div class="contenedor">
     <div class="tc-disposicion">
 
-      <!-- ══════════════ FORMULARIO ══════════════ -->
+      <!-- formulario -->
       <div class="tc-form-zona">
         <div class="caja-formulario" style="padding:40px 36px">
 
@@ -128,7 +128,7 @@
 
         </div><!-- /caja-formulario -->
 
-        <!-- Botones de acción -->
+        <!-- botones de descarga -->
         <div class="tc-acciones">
           <button class="btn btn-outline" id="btn-voltear" type="button">
             <i data-lucide="refresh-cw" size="15"></i>
@@ -152,7 +152,7 @@
       </div><!-- /tc-form-zona -->
 
 
-      <!-- ══════════════ PREVIEW ══════════════ -->
+      <!-- preview de la tarjeta -->
       <div class="tc-preview-zona">
 
         <!-- Escena 3D -->
@@ -160,7 +160,7 @@
           <div class="tc-hover-hint" aria-hidden="true">Clic · Voltear tarjeta</div>
           <div class="tc-giro" id="tc-giro">
 
-            <!-- ANVERSO ─────────────────────── -->
+            <!-- anverso -->
             <div class="tc-cara tc-anverso" id="tc-cara-frente">
 
               <!-- franja de color izquierda -->
@@ -191,7 +191,7 @@
             </div><!-- /tc-anverso -->
 
 
-            <!-- REVERSO ─────────────────────── -->
+            <!-- reverso -->
             <div class="tc-cara tc-reverso">
 
               <!-- marco decorativo -->
@@ -234,7 +234,7 @@
 </main>
 
 
-<!-- ── FOOTER ── -->
+<!-- footer -->
 <footer>
   <div class="contenedor">
     <div class="pie-cuadricula">
@@ -290,7 +290,7 @@
 </footer>
 
 
-<!-- ── BANNER COOKIES ── -->
+<!-- cookies -->
 <div class="aviso-cookies" id="bannerCookies">
   <div class="aviso-cookies-texto">
     <p>Usamos cookies propias y de terceros para mejorar tu experiencia.
@@ -300,21 +300,10 @@
 </div>
 
 
-<!-- ── SCRIPTS ── -->
+<!-- scripts -->
 <script src="scripts.js"></script>
 <script>
-/* ============================================================
-   tarjeta.js — lógica del generador de tarjeta de visita
-   ============================================================
-
-   Sin librerías extra salvo html2canvas (cargada arriba con defer).
-   Tres bloques:
-     1. Preview en tiempo real  (~10 líneas)
-     2. Cambio de estilo        (~20 líneas)
-     3. Volteo + descarga       (~15 líneas)
-   ============================================================ */
-
-/* ── Definición de estilos ──────────────────────────────── */
+// estilos disponibles para la tarjeta
 var ESTILOS = {
   azul: {
     bg:          'linear-gradient(135deg, #1B2A4A 0%, #1e3159 100%)',
@@ -352,7 +341,7 @@ var ESTILOS = {
 var estiloActual = 'azul';
 
 
-/* ── 1. Preview en tiempo real ──────────────────────────── */
+// 1. preview en tiempo real
 document.querySelectorAll('[data-preview]').forEach(function(input) {
   input.addEventListener('input', function() {
     var campo = this.dataset.preview;
@@ -374,7 +363,7 @@ document.querySelectorAll('[data-preview]').forEach(function(input) {
 });
 
 
-/* ── 2. Selector de estilos ─────────────────────────────── */
+// 2. selector de estilos
 function aplicarEstilo(nombre) {
   var s    = ESTILOS[nombre];
   var cara = document.getElementById('tc-cara-frente');
@@ -402,7 +391,7 @@ document.querySelectorAll('.tc-estilo-btn').forEach(function(btn) {
 });
 
 
-/* ── 3. Voltear tarjeta ─────────────────────────────────── */
+// 3. voltear tarjeta
 var volteada = false;
 
 document.getElementById('btn-voltear').addEventListener('click', function() {
@@ -415,7 +404,7 @@ document.getElementById('btn-voltear').addEventListener('click', function() {
 });
 
 
-/* ── 4. Clic directo sobre la tarjeta para voltearla ────── */
+// 4. clic directo sobre la tarjeta también voltea
 document.querySelector('.tc-escena').addEventListener('click', function() {
   volteada = !volteada;
   document.getElementById('tc-giro').classList.toggle('volteada', volteada);
@@ -424,14 +413,8 @@ document.querySelector('.tc-escena').addEventListener('click', function() {
 });
 
 
-/* ── 5. Descarga PNG — anverso + reverso ────────────────── */
-/*
-   Captura secuencial de ambas caras:
-   1. Aplanar contexto 3D (preserve-3d rompe html2canvas)
-   2. Pre-convertir logos a dataURL (evita canvas tainted por XHR)
-   3. Capturar anverso → capturar reverso → descargar ambos
-   Escala × 3 → ~1140 × 690 px por cara, resolución de impresión.
-*/
+// 5. descarga PNG del anverso y reverso con html2canvas
+// captura secuencial: aplana el 3D, convierte logos a dataURL y descarga ambas caras
 document.getElementById('btn-descargar').addEventListener('click', function() {
   var btn = this;
 
@@ -452,7 +435,7 @@ document.getElementById('btn-descargar').addEventListener('click', function() {
   var revLogoEl = reverso ? reverso.querySelector('img') : null;
   var wasVolteada = volteada;
 
-  /* ── Pre-convertir logo a dataURL (mismo PNG para ambas caras) ── */
+  // convertir el logo a dataURL para que html2canvas no lo bloquee
   var logoDataURL = null;
   var anyLogo = logoEl || revLogoEl;
   if (anyLogo && anyLogo.complete && anyLogo.naturalWidth > 0) {
@@ -467,7 +450,7 @@ document.getElementById('btn-descargar').addEventListener('click', function() {
   if (logoEl)    { if (logoDataURL) logoEl.src    = logoDataURL; else logoEl.style.visibility    = 'hidden'; }
   if (revLogoEl) { if (logoDataURL) revLogoEl.src = logoDataURL; else revLogoEl.style.visibility = 'hidden'; }
 
-  /* ── Aplanar contexto 3D y mostrar anverso ── */
+  // aplanar el 3D para que html2canvas pueda capturar
   if (wasVolteada) giro.classList.remove('volteada');
   giro.style.transformStyle           = 'flat';
   giro.style.transform                = 'none';
@@ -538,7 +521,7 @@ document.getElementById('btn-descargar').addEventListener('click', function() {
     }, 150);
   }
 
-  /* ── Capturar ANVERSO primero ── */
+  // captura el anverso primero, luego el reverso
   setTimeout(function() {
     html2canvas(cara, {
       scale: 3, useCORS: false, allowTaint: false,

@@ -1,17 +1,13 @@
-/* ============================================================
-   scripts.js — Funciones compartidas de Impronta
-   ============================================================ */
-
-/* Inicializar iconos Lucide */
+// lucide — solo si está cargado en la página
 if (typeof lucide !== 'undefined') lucide.createIcons();
 
-/* ── Menú hamburguesa ── */
+// menú móvil
 function abrirMenu() {
   var menu = document.getElementById('menuMovil');
   menu.classList.toggle('abierto');
 }
 
-/* ── Modo oscuro ── */
+// modo oscuro — guarda preferencia en localStorage
 function cambiarTema() {
   var activo = document.body.classList.toggle('oscuro');
   localStorage.setItem('tema', activo ? 'oscuro' : 'claro');
@@ -19,14 +15,14 @@ function cambiarTema() {
   if (btn) btn.textContent = activo ? '☀️' : '🌙';
 }
 
-/* Restaurar tema guardado al cargar la página */
+// aplica el tema oscuro al cargar si el usuario ya lo eligió antes
 if (localStorage.getItem('tema') === 'oscuro') {
   document.body.classList.add('oscuro');
   var btnTema = document.getElementById('btnTema');
   if (btnTema) btnTema.textContent = '☀️';
 }
 
-/* ── Formulario multi-paso (presupuesto.html) ── */
+// presupuesto.html — formulario en 3 pasos
 var pasoActual = 1;
 
 function validarPaso(n) {
@@ -73,7 +69,7 @@ function irPaso(n) {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-/* Envío del formulario — muestra confirmación visual */
+// envío del formulario de presupuesto
 (function () {
   var form = document.getElementById('formPresupuesto');
   if (!form) return;
@@ -120,17 +116,16 @@ function irPaso(n) {
   });
 })();
 
-/* ── Acordeón FAQ ── */
+// acordeón de preguntas frecuentes (servicios.html)
 document.querySelectorAll('.faq-pregunta').forEach(function(pregunta) {
   pregunta.addEventListener('click', function() {
     var elemento = this.parentElement;
     var estaAbierto = elemento.classList.contains('abierto');
-    /* Cierra todos los que estén abiertos */
+    // primero cierra todo
     document.querySelectorAll('.faq-elemento.abierto').forEach(function(el) {
       el.classList.remove('abierto');
       el.querySelector('.faq-pregunta').setAttribute('aria-expanded', 'false');
     });
-    /* Si no estaba abierto, lo abre */
     if (!estaAbierto) {
       elemento.classList.add('abierto');
       this.setAttribute('aria-expanded', 'true');
@@ -138,7 +133,7 @@ document.querySelectorAll('.faq-pregunta').forEach(function(pregunta) {
   });
 });
 
-/* ── Formulario de contacto (contacto.html) ── */
+// formulario de contacto (contacto.html)
 function enviarFormulario(e) {
   e.preventDefault();
   var form    = document.getElementById('formulario');
@@ -148,7 +143,7 @@ function enviarFormulario(e) {
   var privacidad = document.getElementById('privacidad');
   var ok = true;
 
-  /* Limpiar errores previos */
+  // limpia los errores del intento anterior
   form.querySelectorAll('.campo-error-inline').forEach(function(el) { el.remove(); });
   form.querySelectorAll('.invalido').forEach(function(el) { el.classList.remove('invalido'); });
 
@@ -177,7 +172,6 @@ function enviarFormulario(e) {
 
   if (!ok) return;
 
-  /* Mostrar confirmación */
   var caja = document.querySelector('#formulario');
   var conf = document.getElementById('mensajeExito');
   if (caja) caja.style.display = 'none';
@@ -185,13 +179,13 @@ function enviarFormulario(e) {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-/* ── Banner de cookies ── */
+// cookies
 function aceptarCookies() {
   localStorage.setItem('cookies', 'aceptado');
   document.getElementById('bannerCookies').classList.add('oculto');
 }
 
-/* Ocultar el banner si el usuario ya lo aceptó antes */
+// si ya aceptó, oculta el banner sin mostrarlo
 (function () {
   var banner = document.getElementById('bannerCookies');
   if (banner && localStorage.getItem('cookies') === 'aceptado') {

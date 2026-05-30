@@ -1,6 +1,4 @@
-﻿/* ===========================
-   VARIABLES
-=========================== */
+﻿/* variables */
 :root {
   --azul:        #1B2A4A;
   --azul-oscuro: #111d33;
@@ -16,9 +14,7 @@
   --blanco:      #FFFFFF;
 }
 
-/* ===========================
-   RESET BÁSICO
-=========================== */
+/* reset */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -37,9 +33,7 @@ body {
   overflow-x: hidden;
 }
 
-/* ===========================
-   NAVEGACIÓN
-=========================== */
+/* navegación */
 nav {
   position: fixed;
   top: 0;
@@ -204,9 +198,7 @@ nav {
   color: var(--oro);
 }
 
-/* ===========================
-   LAYOUT
-=========================== */
+/* layout general */
 .contenedor {
   max-width: 1160px;
   margin: 0 auto;
@@ -221,9 +213,7 @@ section {
   padding: 88px 0;
 }
 
-/* ===========================
-   TIPOGRAFÍA
-=========================== */
+/* tipografía */
 .supratitulo {
   font-size: 0.7rem;
   font-weight: 500;
@@ -265,9 +255,7 @@ p {
   line-height: 1.8;
 }
 
-/* ===========================
-   BOTONES
-=========================== */
+/* botones */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -331,9 +319,7 @@ p {
   border-color: var(--oro);
 }
 
-/* ===========================
-   DIVISOR DECORATIVO
-=========================== */
+/* separadores decorativos */
 .miga-separador-oro {
   width: 48px;
   height: 2px;
@@ -345,9 +331,7 @@ p {
   margin: 20px auto;
 }
 
-/* ===========================
-   HERO DE PÁGINA INTERIOR
-=========================== */
+/* cabecera de página interior */
 .cabecera-pagina {
   background: var(--azul);
   padding: 140px 0 80px;
@@ -403,9 +387,7 @@ p {
   z-index: 2;
 }
 
-/* ===========================
-   FOOTER
-=========================== */
+/* footer */
 footer {
   background: var(--azul-oscuro);
   padding: 72px 0 0;
@@ -493,9 +475,7 @@ footer {
 
 .pie-legal a:hover { color: var(--oro); }
 
-/* ===========================
-   COOKIES BANNER
-=========================== */
+/* banner de cookies */
 .aviso-cookies {
   position: fixed;
   bottom: 0;
@@ -552,9 +532,7 @@ footer {
   border-color: rgba(255,255,255,0.2);
 }
 
-/* ===========================
-   BREADCRUMBS
-=========================== */
+/* migas de pan */
 .migadepan {
   background: var(--crema-oscura);
   padding: 12px 0;
@@ -587,9 +565,7 @@ footer {
   font-weight: 500;
 }
 
-/* ===========================
-   FORMULARIO
-=========================== */
+/* formularios */
 .caja-formulario {
   background: var(--blanco);
   padding: 48px 44px;
@@ -687,14 +663,10 @@ footer {
 .mensaje-exito.visible { display: block; }
 .mensaje-exito p { color: #2e7d52; font-size: 0.88rem; margin: 0; }
 
-/* ===========================
-   ANIMACIONES
-=========================== */
+/* animaciones */
 
 
-/* ===========================
-   RESPONSIVE
-=========================== */
+/* responsive */
 @media (max-width: 1024px) {
   nav { padding: 0 24px; }
   .nav-enlaces { display: none; }
@@ -713,9 +685,7 @@ footer {
   .caja-formulario { padding: 32px 24px; }
 }
 
-/* ===========================
-   MODO CLARO / OSCURO
-=========================== */
+/* modo oscuro */
 
 /* Solo cambian fondos de página y texto corriente.
    --azul y --oro NO se tocan, son la identidad de marca y
